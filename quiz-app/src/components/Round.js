@@ -15,22 +15,24 @@ class Round extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			roundNumber: 1,
 		}
 	}
 
 	render() {
 		const questionNumbers = [one, two, three, four, five, six, seven, eight, nine, ten];
+		const { roundNumber, score, questions } = this.props;
+		console.log(questions);
 		return (
 			<div>
-				<h2>Round {this.state.roundNumber}</h2>
+				<h2>Round {roundNumber}</h2>
+				<p>Total so far: {score} / 317</p>
 				{ questionNumbers.map((questionNumber, index) =>
 					<div className="question" key={index}>
 						<audio controls="controls">
 							<source src={questionNumber}/>
 						</audio>
-						<Input placeholder="Song" which="song" number={index}/>
-						<Input placeholder="Artist" which="artist" number={index}/>
+						<Input placeholder="Song" which="song" number={index} questions={questions}/>
+						<Input placeholder="Artist" which="artist" number={index} questions={questions}/>
 					</div>
 				)}
 			</div>

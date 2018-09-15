@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Round from './components/Round';
+import RoundContainer from './RoundContainer';
 
 class App extends Component {
   render() {
@@ -17,7 +17,7 @@ class App extends Component {
         <p>
           I do not own any of these songs, but they are all good, except one.
         </p>
-        <Round roundNumber="1"/>
+        <RoundContainer/>
       </div>
     );
   }

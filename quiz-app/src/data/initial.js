@@ -1,6 +1,8 @@
 
 const initial = {
-	questions = [
+	roundNumber: 1,
+	score: 0,
+	questions: [
 		[	
 			"one",
 			"Heart of Glass",
@@ -53,3 +55,5 @@ const initial = {
 		]
 	]
 }
+
+export default initial;
