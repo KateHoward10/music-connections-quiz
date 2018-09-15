@@ -27,7 +27,6 @@ input {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+span {
+  /*width: 10px;*/
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Round from './Round';
+import Round from './components/Round';
 
 class App extends Component {
   render() {
