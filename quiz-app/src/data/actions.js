@@ -11,3 +11,9 @@ export const increaseScore = (points) => {
         points: points,
     };
 };
+
+export const decreaseBonusPoints = () => {
+	return {
+		type: "decreaseBonusPoints",
+	}
+}

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Map, List } from "immutable";
 
 class Input extends Component {
 	constructor(props) {
@@ -13,7 +14,7 @@ class Input extends Component {
 	}
 
 	update(e) {
-		// const answer = this.state.answer;
+		const answer = this.state.answer;
 		this.setState ({
 			answer: e.target.value.toLowerCase(),
 		});
@@ -21,10 +22,12 @@ class Input extends Component {
 
 	check(e) {
 		e.preventDefault();
-		const { which, number, questions } = this.props;
-		const { answer } = this.state;
-		const question = questions.get(0)[number][which].toLowerCase();
-		if (answer===question) {
+		const { which, questions, songNumber, roundNumber } = this.props;
+		const { answer, correct, showButton } = this.state;
+		const round = questions.get(roundNumber);
+		const song = round.get(songNumber);
+		const rightAnswer = song.get(which).toLowerCase();
+		if (answer===rightAnswer) {
 			this.setState ({
 				correct: true,
 				showButton: false,
@@ -34,11 +37,11 @@ class Input extends Component {
 	}
 
 	render() {
-		const { which, number, questions } = this.props;
+		const { which, number, questions, songNumber, roundNumber } = this.props;
 		const { correct, showButton } = this.state;
 		return (
 			<form>
-			    <input value={ correct ? questions.get(0)[number][which] : null } type="text" onChange={this.update} placeholder={which==="1" ? "Song" : which==="Artist" ? "2" : null}/>
+			    <input type="text" onChange={this.update} placeholder={which==="0" ? "Song" : which==="1" ? "Artist" : "" }/>
 				<span>{ correct ? "✔" : "" }</span>
 			    { showButton ? <button onClick={this.check}>Check</button> : null }
 			</form>

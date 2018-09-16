@@ -1,105 +1,96 @@
 import { Map, List } from "immutable";
 
 const initial = Map({
-	roundNumber: 1,
+	roundNumber: 0,
 	score: 0,
+	bonusPoints: 10,
 	questions: List([
-		[
-			[	
-				"one",
+		List([
+			List([
 				"Heart of Glass",
 				"Blondie"
-			],
-			[
-				"two",
+			]),
+			List([
 				"Killer Queen",
 				"Queen"
-			],
-			[
-				"three",
+			]),
+			List([
 				"Sweet Caroline",
 				"Neil Diamond"
-			],
-			[
-				"four",
+			]),
+			List([
 				"All That She Wants",
 				"Ace of Base"
-			],
-			[
-				"five",
+			]),
+			List([
 				"God Save The Queen",
 				"Sex Pistols"
-			],
-			[
-				"six",
+			]),
+			List([
 				"Better Together",
 				"Jack Johnson"
-			],
-			[
-				"seven",
+			]),
+			List([
 				"Karma Chameleon",
 				"Culture Club"
-			],
-			[
-				"eight",
+			]),
+			List([
 				"King of the Mountain",
 				"Kate Bush"
-			],
-			[
-				"nine",
+			]),
+			List([
 				"Happy Jack",
 				"The Who"
-			],
-			[
-				"ten",
+			]),
+			List([
 				"Ace of Spades",
 				"Motorhead"
-			],
+			]),
 			"cards"
-		],
-		[
-			[
+		]),
+		List([
+			List([
 				"In the Court of the Crimson King",
 				"King Crimson"
-			],
-			[
+			]),
+			List([
 				"Pale Blue Eyes",
 				"Velvet Underground"
-			],
-			[
+			]),
+			List([
 				"Little Red Corvette",
 				"Prince"
-			],
-			[
+			]),
+			List([
 				"Money",
 				"Pink Floyd"
-			],
-			[
+			]),
+			List([
 				"Back To Black",
 				"Amy Winehouse"
-			],
-			[
+			]),
+			List([
 				"Take Me To The River",
 				"Al Green"
-			],
-			[
+			]),
+			List([
 				"Smoke On The Water",
 				"Deep Purple"
-			],
-			[
+			]),
+			List([
 				"Pretty in Pink",
 				"Psychedelic Furs"
-			],
-			[
+			]),
+			List([
 				"Yellow",
 				"Coldplay"
-			],
-			[
+			]),
+			List([
 				"Purple Haze",
 				"Jimi Hendrix"
-			],
+			]),
 			"colour"
-		],
+		]),
 	])
 })
 
