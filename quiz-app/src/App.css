@@ -9,6 +9,7 @@ input {
 .question {
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -27,6 +28,6 @@ input {
   font-size: large;
 }
 
-span {
-  /*width: 10px;*/
+.total {
+  float: right;
 }

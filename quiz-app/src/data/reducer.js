@@ -1,6 +1,7 @@
+
 const increaseRoundNumber = (state, action) => state.update("roundNumber", roundNumber => roundNumber+1);
 
-const increaseScore = (state, action) => state.update("score", score => score+30);
+const increaseScore = (state, {points}) => state.update("score", score => score+points);
 
 const reducer = (state, action) => {
 	switch (action.type) {

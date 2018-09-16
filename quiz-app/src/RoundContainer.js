@@ -4,16 +4,16 @@ import { increaseRoundNumber, increaseScore  } from './data/actions';
 
 const mapStateToProps = state => {
 	return {
-		roundNumber: state.roundNumber,
-		score: state.score,
-		questions: state.questions,
+		roundNumber: state.get("roundNumber"),
+		score: state.get("score"),
+		questions: state.get("questions"),
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	return {
 		increaseRoundNumber: () => dispatch(increaseRoundNumber()),
-		increaseScore: () => dispatch(increaseScore()),
+		increaseScore: (points) => dispatch(increaseScore(points)),
 	};
 };
 

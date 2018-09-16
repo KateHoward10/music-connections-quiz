@@ -5,8 +5,9 @@ export const increaseRoundNumber = () => {
     };
 };
 
-export const increaseScore = () => {
+export const increaseScore = (points) => {
     return {
         type: "increaseScore",
+        points: points,
     };
 };
