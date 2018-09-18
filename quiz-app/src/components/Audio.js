@@ -24,9 +24,7 @@ class Audio extends Component {
 		const { roundNumber, songNumber } = this.props;
 		const song = require(`../music/${roundNumber}/${songNumber}.mp3`);
 		return (
-			<audio onPlay={this.play} controls="controls">
-				<source src={song}/>
-			</audio>
+			<audio onPlay={this.play} controls="controls" src={song}></audio>
 		)
 	}
 

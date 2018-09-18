@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Map, List } from "immutable";
 
 class Input extends Component {
 	constructor(props) {

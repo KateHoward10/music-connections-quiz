@@ -6,91 +6,213 @@ const initial = Map({
 	bonusPoints: 10,
 	questions: List([
 		List([
-			List([
-				"Heart of Glass",
-				"Blondie"
-			]),
-			List([
-				"Killer Queen",
-				"Queen"
-			]),
-			List([
-				"Sweet Caroline",
-				"Neil Diamond"
-			]),
-			List([
-				"All That She Wants",
-				"Ace of Base"
-			]),
-			List([
-				"God Save The Queen",
-				"Sex Pistols"
-			]),
-			List([
-				"Better Together",
-				"Jack Johnson"
-			]),
-			List([
-				"Karma Chameleon",
-				"Culture Club"
-			]),
-			List([
-				"King of the Mountain",
-				"Kate Bush"
-			]),
-			List([
-				"Happy Jack",
-				"The Who"
-			]),
-			List([
-				"Ace of Spades",
-				"Motorhead"
-			]),
-			"cards"
+			List([ "Heart of Glass", "Blondie" ]),
+			List([ "Killer Queen", "Queen" ]),
+			List([ "Sweet Caroline", "Neil Diamond" ]),
+			List([ "All That She Wants", "Ace of Base" ]),
+			List([ "God Save The Queen", "Sex Pistols" ]),
+			List([ "Better Together", "Jack Johnson" ]),
+			List([ "Karma Chameleon", "Culture Club" ]),
+			List([ "King of the Mountain", "Kate Bush" ]),
+			List([ "Happy Jack", "The Who" ]),
+			List([ "Ace of Spades", "Motorhead" ]),
+			"card"
 		]),
 		List([
-			List([
-				"In the Court of the Crimson King",
-				"King Crimson"
-			]),
-			List([
-				"Pale Blue Eyes",
-				"Velvet Underground"
-			]),
-			List([
-				"Little Red Corvette",
-				"Prince"
-			]),
-			List([
-				"Money",
-				"Pink Floyd"
-			]),
-			List([
-				"Back To Black",
-				"Amy Winehouse"
-			]),
-			List([
-				"Take Me To The River",
-				"Al Green"
-			]),
-			List([
-				"Smoke On The Water",
-				"Deep Purple"
-			]),
-			List([
-				"Pretty in Pink",
-				"Psychedelic Furs"
-			]),
-			List([
-				"Yellow",
-				"Coldplay"
-			]),
-			List([
-				"Purple Haze",
-				"Jimi Hendrix"
-			]),
+			List([ "In the Court of the Crimson King", "King Crimson" ]),
+			List([ "Pale Blue Eyes", "Velvet Underground" ]),
+			List([ "Little Red Corvette", "Prince" ]),
+			List([ "Money", "Pink Floyd" ]),
+			List([ "Back To Black", "Amy Winehouse" ]),
+			List([ "Take Me To The River", "Al Green" ]),
+			List([ "Smoke On The Water", "Deep Purple" ]),
+			List([ "Pretty in Pink", "Psychedelic Furs" ]),
+			List([ "Yellow", "Coldplay" ]),
+			List([ "Purple Haze", "Jimi Hendrix" ]),
 			"colour"
 		]),
+		List([
+			List([ "Blue Monday", "New Order" ]),
+			List([ "Ruby Tuesday", "Rolling Stones" ]),
+			List([ "Sunday Morning", "Velvet Underground" ]),
+			List([ "Saturday Night", "Whigfield" ]),
+			List([ "Lazy Sunday", "Small Faces" ]),
+			List([ "Manic Monday", "The Bangles" ]),
+			List([ "Friday I’m In Love", "The Cure" ]),
+			List([ "Saturday Night’s Alright For Fighting", "Elton John" ]),
+			List([ "Monday Morning", "Fleetwood Mac" ]),
+			List([ "Friday", "Rebecca Black" ]),
+			"day"
+		]),
+		List([
+			List([ "I Don’t Like Mondays", "Boomtown Rats" ]),
+			List([ "Black Dog", "Led Zeppelin" ]),
+			List([ "Cool For Cats", "Squeeze" ]),
+			List([ "Tiger Feet", "Mud" ]),
+			List([ "Fluorescent Adolescent", "Arctic Monkeys" ]),
+			List([ "Rat in Mi Kitchen", "UB40" ]),
+			List([ "5 Years’ Time", "Noah & The Whale" ]),
+			List([ "Kiss From a Rose", "Seal" ]),
+			List([ "White Rabbit", "Jefferson Airplane" ]),
+			List([ "I Am The Walrus", "The Beatles" ]),
+			"animal"
+		]),
+		List([
+			List([ "Hounds of Love","Kate Bush"]),
+			List([ "Bridge Over Troubled Water", "Simon & Garfunkel" ]),
+			List([ "Lust For Life", "Iggy Pop" ]),
+			List([ "Wish You Were Here", "Pink Floyd" ]),
+			List([ "All The Young Dudes", "Mott the Hoople" ]),
+			List([ "Hotel California", "Eagles" ]),
+			List([ "Purple Rain", "Prince" ]),
+			List([ "London Calling", "The Clash" ]),
+			List([ "What’s Going On", "Marvin Gaye" ]),
+			List([ "Heroes", "David Bowie" ]),
+			"title track"
+		]),
+		List([
+			List([ "Brothers in Arms", "Dire Straits" ]),
+			List([ "Fortunate Son", "Creedence Clearwater Revival" ]),
+			List([ "AM 180", "Grandaddy" ]),
+			List([ "California Dreamin", "Mamas & The Papas" ]),
+			List([ "He Ain’t Heavy, He’s My Brother", "The Hollies" ]),
+			List([ "Lost in Music", "Sister Sledge" ]),
+			List([ "Papa Don’t Preach", "Madonna" ]),
+			List([ "My Perfect Cousin", "The Undertones" ]),
+			List([ "Stay", "Shakespears Sister" ]),
+			List([ "Sweet Child o’ Mine", "Guns ’n’ Roses" ]),
+			"family"
+		]),
+		List([
+			List([ "Mary’s Boy Child", "Boney M" ]),
+			List([ "Can We Fix It?", "Bob The Builder" ]),
+			List([ "Only You", "Flying Pickets", ]),
+			List([ "Earth Song", "Michael Jackson" ]),
+			List([ "Always On My Mind", "Pet Shop Boys" ]),
+			List([ "Another Brick in the Wall Pt 2", "Pink Floyd" ]),
+			List([ "Killing in the Name", "Rage Against The Machine" ]),
+			List([ "Too Much", "Spice Girls" ]),
+			List([ "Don’t You Want Me", "Human League" ]),
+			List([ "Do They Know It’s Christmas?", "Band Aid" ]),
+			"Christmas"
+		]),
+		List([
+			List([ "Bohemian Rhapsody", "Queen" ]),
+			List([ "Paranoid", "Black Sabbath" ]),
+			List([ "Tubthumping", "Chumbawumba" ]),
+			List([ "What’s Up", "Four Non-Blondes" ]),
+			List([ "Buck Rogers", "Feeder" ]),
+			List([ "Glory Box", "Portishead" ]),
+			List([ "Iris", "Goo Goo Dolls" ]),
+			List([ "Baba O’Riley", "The Who" ]),
+			List([ "Laid", "James" ]),
+			List([ "The Bad Touch", "Bloodhound Gang" ]),
+			"title"
+		]),
+		List([
+			List([ "Intervention", "Arcade Fire" ]),
+			List([ "We Didn’t Start The Fire", "Billy Joel" ]),
+			List([ "September", "Earth, Wind and Fire" ]),
+			List([ "I’m On Fire", "Bruce Springsteen" ]),
+			List([ "Great Balls of Fire", "Jerry Lee Lewis" ]),
+			List([ "Relight My Fire", "Take That" ]),
+			List([ "Light My Fire", "The Doors" ]),
+			List([ "Sex on Fire", "Kings of Leon" ]),
+			List([ "Firestarter", "The Prodigy" ]),
+			List([ "Fire", "Crazy World of Arthur Brown" ]),
+			"fire"
+		]),
+		List([
+			List([ "No Cars Go", "Arcade Fire" ]),
+			List([ "Caroline, No", "Beach Boys" ]),
+			List([ "No Quarter", "Led Zeppelin" ]),
+			List([ "Don’t Speak", "No Doubt" ]),
+			List([ "(I Can’t Get No) Satisfaction", "Rolling Stones" ]),
+			List([ "No Woman No Cry", "Bob Marley" ]),
+			List([ "No Tomorrow", "Orson" ]),
+			List([ "No Surprises", "Radiohead" ]),
+			List([ "No Surrender", "Bruce Springsteen" ]),
+			List([ "No No No", "Dawn Penn" ]),
+			"no"
+		]),
+		List([
+			List([ "No Lucifer", "British Sea Power" ]),
+			List([ "Devil’s Spoke", "Laura Marling" ]),
+			List([ "Straight To Hell", "The Clash" ]),
+			List([ "Chase The Devil", "Max Romeo" ]),
+			List([ "Number Of The Beast", "Iron Maiden" ]),
+			List([ "Devil’s Haircut", "Beck" ]),
+			List([ "Road To Hell", "Chris Rea" ]),
+			List([ "Devil In Disguise", "Elvis Presley" ]),
+			List([ "Bat Out Of Hell", "Meatloaf" ]),
+			List([ "Sympathy For The Devil", "Rolling Stones" ]),
+			"devil" || "hell"
+		]),
+		List([
+			List([ "Highway To Hell", "ACDC" ]),
+			List([ "Boulevard of Broken Dreams", "Greenday" ]),
+			List([ "Dancing in the Streets", "Martha & the Vandellas" ]),
+			List([ "Electric Avenue", "Eddy Grant" ]),
+			List([ "Street Fighting Man", "Rolling Stones" ]),
+			List([ "Road To Nowhere", "Talking Heads" ]),
+			List([ "Dead End Street", "The Kinks" ]),
+			List([ "Thunder Road", "Bruce Springsteen" ]),
+			List([ "Autobahn", "Kraftwerk" ]),
+			List([ "Penny Lane", "The Beatles" ]),
+			"road"
+		]),
+		List([
+			List([ "Positively 4th Street", "Bob Dylan" ]),
+			List([ "Song 2", "Blur" ]),
+			List([ "Edge of Seventeen", "Stevie Nicks" ]),
+			List([ "Dreadlock Holiday", "10cc" ]),
+			List([ "99 Problems", "Jay Z" ]),
+			List([ "54-46 Was My Number", "Toots & The Maytals" ]),
+			List([ "I Can’t Help Myself", "Four Tops" ]),
+			List([ "Two Out Of Three Ain’t Bad", "Meatloaf" ]),
+			List([ "500 Miles", "Proclaimers" ]),
+			List([ "Seven Nation Army", "White Stripes" ]),
+			"numbers"
+		]),
+		List([
+			List([ "Red Red Wine", "UB40" ]),
+			List([ "Whisky in the Jar", "Thin Lizzy" ]),
+			List([ "Rip It Up", "Orange Juice" ]),
+			List([ "Escape", "Rupert Holmes" ]),
+			List([ "Black Coffee in Bed I Am A Cider Drinker","Squeeze" ]),
+			List([ "Champagne Supernova", "Oasis" ]),
+			List([ "Coffee & TV", "Blur" ]),
+			List([ "Gin & Juice", "Snoop Dogg" ]),
+			List([ "You Sexy Thing", "Hot Chocolate" ]),
+			List([ "Milkshake", "Kelis" ]),
+			"drinks"
+		]),
+		List([
+			List([ "Waterfalls", "TLC" ]),
+			List([ "Proud Mary", "CCR" ]),
+			List([ "Remember Me", "BSP" ]),
+			List([ "Enola Gay", "OMD" ]),
+			List([ "Fuk Da Police", "NWA" ]),
+			List([ "Spitfire", "PSB" ]),
+			List([ "When Smokey Sings", "ABC" ]),
+			List([ "Unbelievable", "EMF" ]),
+			List([ "Don’t Bring Me Down", "ELO" ]),
+			List(["Paper Planes","MIA" ]),
+			"three letter"
+		]),
+		List([
+			List([ "What’s The Frequency, Kenneth?", "REM" ]),
+			List([ "Life on Mars?", "David Bowie" ]),
+			List([ "Have You Ever Seen The Rain?", "CCR" ]),
+			List([ "Are You Experienced?", "Jimi Hendrix" ]),
+			List([ "Where Is The Love?", "Black Eyed Peas" ]),
+			List([ "Who Let The Dogs Out?", "Baha Men" ]),
+			List([ "Why Can’t We Be Friends?", "War" ]),
+			List([ "Where Is My Mind?", "Pixies" ]),
+			List([ "How Soon Is Now?", "The Smiths" ]),
+			List([ "Do You Realize??", "Flaming Lips" ]),
+			"question"
+		])
 	])
 })
 
