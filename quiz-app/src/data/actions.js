@@ -8,12 +8,18 @@ export const increaseRoundNumber = () => {
 export const increaseScore = (points) => {
     return {
         type: "increaseScore",
-        points: points,
+        points: points
     };
 };
 
 export const decreaseBonusPoints = () => {
 	return {
 		type: "decreaseBonusPoints",
+	}
+}
+
+export const resetBonusPoints = () => {
+	return {
+		type: "resetBonusPoints",
 	}
 }

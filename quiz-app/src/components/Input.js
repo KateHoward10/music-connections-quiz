@@ -23,9 +23,7 @@ class Input extends Component {
 		e.preventDefault();
 		const { which, questions, songNumber, roundNumber } = this.props;
 		const { answer, correct, showButton } = this.state;
-		const round = questions.get(roundNumber);
-		const song = round.get(songNumber);
-		const rightAnswer = song.get(which).toLowerCase();
+		const rightAnswer = ((questions.get(roundNumber)).get(songNumber)).get(which).toLowerCase();
 		if (answer===rightAnswer) {
 			this.setState ({
 				correct: true,
@@ -36,14 +34,16 @@ class Input extends Component {
 	}
 
 	render() {
-		const { which, number, questions, songNumber, roundNumber } = this.props;
+		const { which, number, questions, songNumber, roundNumber, marked } = this.props;
 		const { correct, showButton } = this.state;
+		const song = (questions.get(roundNumber)).get(songNumber);
 		return (
-			<form>
+			marked ? <div> {which==="1" ? " by " : "   "} {song.get(which)}</div> :
+			<form>	
 			    <input type="text" onChange={this.update} placeholder={which==="0" ? "Song" : which==="1" ? "Artist" : "" }/>
-				<span>{ correct ? "✔" : "" }</span>
-			    { showButton ? <button onClick={this.check}>Check</button> : null }
+			    { showButton ? <button onClick={this.check}>Check</button> : <span>{ correct ? "✔" : "" }</span> }
 			</form>
+			
 		)
 	}
 

@@ -14,9 +14,9 @@ const initial = Map({
 			List([ "Better Together", "Jack Johnson" ]),
 			List([ "Karma Chameleon", "Culture Club" ]),
 			List([ "King of the Mountain", "Kate Bush" ]),
-			List([ "Happy Jack", "The Who" ]),
+			List([ "The Joker", "Steve Miller Band" ]),
 			List([ "Ace of Spades", "Motorhead" ]),
-			"card"
+			List([ "card", "playing cards" ])
 		]),
 		List([
 			List([ "In the Court of the Crimson King", "King Crimson" ]),
@@ -29,7 +29,7 @@ const initial = Map({
 			List([ "Pretty in Pink", "Psychedelic Furs" ]),
 			List([ "Yellow", "Coldplay" ]),
 			List([ "Purple Haze", "Jimi Hendrix" ]),
-			"colour"
+			List([ "colour", "colours" ])
 		]),
 		List([
 			List([ "Blue Monday", "New Order" ]),
@@ -42,7 +42,7 @@ const initial = Map({
 			List([ "Saturday Night’s Alright For Fighting", "Elton John" ]),
 			List([ "Monday Morning", "Fleetwood Mac" ]),
 			List([ "Friday", "Rebecca Black" ]),
-			"day"
+			List([ "day", "days of the week" ])
 		]),
 		List([
 			List([ "I Don’t Like Mondays", "Boomtown Rats" ]),
@@ -50,12 +50,12 @@ const initial = Map({
 			List([ "Cool For Cats", "Squeeze" ]),
 			List([ "Tiger Feet", "Mud" ]),
 			List([ "Fluorescent Adolescent", "Arctic Monkeys" ]),
-			List([ "Rat in Mi Kitchen", "UB40" ]),
-			List([ "5 Years’ Time", "Noah & The Whale" ]),
+			List([ "Gold Lion", "Yeah Yeah Yeahs" ]),
+			List([ "Float On", "Modest Mouse" ]),
 			List([ "Kiss From a Rose", "Seal" ]),
 			List([ "White Rabbit", "Jefferson Airplane" ]),
 			List([ "I Am The Walrus", "The Beatles" ]),
-			"animal"
+			List([ "animal", "animals"])
 		]),
 		List([
 			List([ "Hounds of Love","Kate Bush"]),
@@ -68,7 +68,7 @@ const initial = Map({
 			List([ "London Calling", "The Clash" ]),
 			List([ "What’s Going On", "Marvin Gaye" ]),
 			List([ "Heroes", "David Bowie" ]),
-			"title track"
+			List([ "title", "title tracks from albums" ])
 		]),
 		List([
 			List([ "Brothers in Arms", "Dire Straits" ]),
@@ -81,7 +81,7 @@ const initial = Map({
 			List([ "My Perfect Cousin", "The Undertones" ]),
 			List([ "Stay", "Shakespears Sister" ]),
 			List([ "Sweet Child o’ Mine", "Guns ’n’ Roses" ]),
-			"family"
+			List([ "family", "family members" ])
 		]),
 		List([
 			List([ "Mary’s Boy Child", "Boney M" ]),
@@ -94,7 +94,7 @@ const initial = Map({
 			List([ "Too Much", "Spice Girls" ]),
 			List([ "Don’t You Want Me", "Human League" ]),
 			List([ "Do They Know It’s Christmas?", "Band Aid" ]),
-			"Christmas"
+			List([ "christmas", "UK Christmas number ones" ])
 		]),
 		List([
 			List([ "Bohemian Rhapsody", "Queen" ]),
@@ -107,7 +107,7 @@ const initial = Map({
 			List([ "Baba O’Riley", "The Who" ]),
 			List([ "Laid", "James" ]),
 			List([ "The Bad Touch", "Bloodhound Gang" ]),
-			"title"
+			List([ "title", "song titles missing from lyrics" ])
 		]),
 		List([
 			List([ "Intervention", "Arcade Fire" ]),
@@ -120,7 +120,7 @@ const initial = Map({
 			List([ "Sex on Fire", "Kings of Leon" ]),
 			List([ "Firestarter", "The Prodigy" ]),
 			List([ "Fire", "Crazy World of Arthur Brown" ]),
-			"fire"
+			List([ "fire", "fire" ])
 		]),
 		List([
 			List([ "No Cars Go", "Arcade Fire" ]),
@@ -133,7 +133,7 @@ const initial = Map({
 			List([ "No Surprises", "Radiohead" ]),
 			List([ "No Surrender", "Bruce Springsteen" ]),
 			List([ "No No No", "Dawn Penn" ]),
-			"no"
+			List([ "no", "no" ])
 		]),
 		List([
 			List([ "No Lucifer", "British Sea Power" ]),
@@ -146,7 +146,7 @@ const initial = Map({
 			List([ "Devil In Disguise", "Elvis Presley" ]),
 			List([ "Bat Out Of Hell", "Meatloaf" ]),
 			List([ "Sympathy For The Devil", "Rolling Stones" ]),
-			"devil" || "hell"
+			List([ "devil" || "hell", "Hell, or the devil" ])
 		]),
 		List([
 			List([ "Highway To Hell", "ACDC" ]),
@@ -156,13 +156,13 @@ const initial = Map({
 			List([ "Street Fighting Man", "Rolling Stones" ]),
 			List([ "Road To Nowhere", "Talking Heads" ]),
 			List([ "Dead End Street", "The Kinks" ]),
-			List([ "Thunder Road", "Bruce Springsteen" ]),
+			List([ "Baker Street", "Gerry Rafferty" ]),
 			List([ "Autobahn", "Kraftwerk" ]),
 			List([ "Penny Lane", "The Beatles" ]),
-			"road"
+			List([ "road", "roads" ])
 		]),
 		List([
-			List([ "Positively 4th Street", "Bob Dylan" ]),
+			List([ "Across 110th Street", "Bobby Womack" ]),
 			List([ "Song 2", "Blur" ]),
 			List([ "Edge of Seventeen", "Stevie Nicks" ]),
 			List([ "Dreadlock Holiday", "10cc" ]),
@@ -172,33 +172,33 @@ const initial = Map({
 			List([ "Two Out Of Three Ain’t Bad", "Meatloaf" ]),
 			List([ "500 Miles", "Proclaimers" ]),
 			List([ "Seven Nation Army", "White Stripes" ]),
-			"numbers"
+			List([ "numbers", "numbers" ])
 		]),
 		List([
 			List([ "Red Red Wine", "UB40" ]),
 			List([ "Whisky in the Jar", "Thin Lizzy" ]),
 			List([ "Rip It Up", "Orange Juice" ]),
 			List([ "Escape", "Rupert Holmes" ]),
-			List([ "Black Coffee in Bed I Am A Cider Drinker","Squeeze" ]),
+			List([ "I Am A Cider Drinker","The Wurzels" ]),
 			List([ "Champagne Supernova", "Oasis" ]),
 			List([ "Coffee & TV", "Blur" ]),
 			List([ "Gin & Juice", "Snoop Dogg" ]),
 			List([ "You Sexy Thing", "Hot Chocolate" ]),
 			List([ "Milkshake", "Kelis" ]),
-			"drinks"
+			List([ "drinks", "drinks" ])
 		]),
 		List([
 			List([ "Waterfalls", "TLC" ]),
-			List([ "Proud Mary", "CCR" ]),
-			List([ "Remember Me", "BSP" ]),
+			List([ "Proud Mary", "Creedence Clearwater Revival" ]),
+			List([ "Remember Me", "British Sea Power" ]),
 			List([ "Enola Gay", "OMD" ]),
 			List([ "Fuk Da Police", "NWA" ]),
-			List([ "Spitfire", "PSB" ]),
+			List([ "Spitfire", "Public Service Broadcasting" ]),
 			List([ "When Smokey Sings", "ABC" ]),
 			List([ "Unbelievable", "EMF" ]),
-			List([ "Don’t Bring Me Down", "ELO" ]),
-			List(["Paper Planes","MIA" ]),
-			"three letter"
+			List([ "Don’t Bring Me Down", "Electric Light Orchestra" || "ELO" ]),
+			List([ "Paper Planes","MIA" ]),
+			List([ "letter", "artists known by 3 letters" ])
 		]),
 		List([
 			List([ "What’s The Frequency, Kenneth?", "REM" ]),
@@ -211,7 +211,7 @@ const initial = Map({
 			List([ "Where Is My Mind?", "Pixies" ]),
 			List([ "How Soon Is Now?", "The Smiths" ]),
 			List([ "Do You Realize??", "Flaming Lips" ]),
-			"question"
+			List([ "question", "question marks?" ])
 		])
 	])
 })

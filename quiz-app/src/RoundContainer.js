@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Round from './components/Round';
-import { increaseRoundNumber, increaseScore, decreaseBonusPoints } from './data/actions';
+import { increaseRoundNumber, increaseScore, decreaseBonusPoints, resetBonusPoints } from './data/actions';
 
 const mapStateToProps = state => {
 	return {
@@ -16,6 +16,7 @@ const mapDispatchToProps = dispatch => {
 		increaseRoundNumber: () => dispatch(increaseRoundNumber()),
 		increaseScore: (points) => dispatch(increaseScore(points)),
 		decreaseBonusPoints: () => dispatch(decreaseBonusPoints()),
+		resetBonusPoints: () => dispatch(resetBonusPoints()),
 	};
 };
 
