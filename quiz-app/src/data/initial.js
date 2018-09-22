@@ -54,7 +54,7 @@ const initial = Map({
 			List([ "Float On", "Modest Mouse" ]),
 			List([ "Kiss From a Rose", "Seal" ]),
 			List([ "White Rabbit", "Jefferson Airplane" ]),
-			List([ "I Am The Walrus", "The Beatles" ]),
+			List([ "I Am The Walrus", "Beatles" ]),
 			List([ "animal", "animals"])
 		]),
 		List([
@@ -146,7 +146,7 @@ const initial = Map({
 			List([ "Devil In Disguise", "Elvis Presley" ]),
 			List([ "Bat Out Of Hell", "Meatloaf" ]),
 			List([ "Sympathy For The Devil", "Rolling Stones" ]),
-			List([ "devil" || "hell", "Hell, or the devil" ])
+			List([ ["devil", "hell"], "Hell, or the devil" ])
 		]),
 		List([
 			List([ "Highway To Hell", "ACDC" ]),
@@ -159,7 +159,7 @@ const initial = Map({
 			List([ "Baker Street", "Gerry Rafferty" ]),
 			List([ "Autobahn", "Kraftwerk" ]),
 			List([ "Penny Lane", "The Beatles" ]),
-			List([ "road", "roads" ])
+			List([ ["road", "street"], "roads" ])
 		]),
 		List([
 			List([ "Across 110th Street", "Bobby Womack" ]),
@@ -172,7 +172,7 @@ const initial = Map({
 			List([ "Two Out Of Three Ain’t Bad", "Meatloaf" ]),
 			List([ "500 Miles", "Proclaimers" ]),
 			List([ "Seven Nation Army", "White Stripes" ]),
-			List([ "numbers", "numbers" ])
+			List([ "number", "numbers" ])
 		]),
 		List([
 			List([ "Red Red Wine", "UB40" ]),
@@ -185,7 +185,7 @@ const initial = Map({
 			List([ "Gin & Juice", "Snoop Dogg" ]),
 			List([ "You Sexy Thing", "Hot Chocolate" ]),
 			List([ "Milkshake", "Kelis" ]),
-			List([ "drinks", "drinks" ])
+			List([ "drink", "drinks" ])
 		]),
 		List([
 			List([ "Waterfalls", "TLC" ]),

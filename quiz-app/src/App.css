@@ -6,6 +6,11 @@ input {
   margin: 10px;
 }
 
+.inputs {
+  display: flex;
+  flex-direction: row;
+}
+
 .question {
   display: flex;
   flex-direction: row;
@@ -34,4 +39,8 @@ input {
 
 .continue {
   float: right;
+}
+
+.songAnswer {
+  margin-left: 20px;
 }

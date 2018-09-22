@@ -9,7 +9,6 @@ class Audio extends Component {
 		this.play = this.play.bind(this);
 	}
 
-
 	play() {
 		const plays = this.state.plays;
 		if (plays < 1) {

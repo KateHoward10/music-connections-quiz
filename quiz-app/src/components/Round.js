@@ -48,7 +48,7 @@ class Round extends Component {
 			connectionButton: true,
 		});
 		this.props.increaseRoundNumber();
-		this.props.resetBonusPoints()
+		this.props.resetBonusPoints();
 	}
 
 	render() {
@@ -60,7 +60,7 @@ class Round extends Component {
 				<div>
 					{ marked ? <p className="total">Total so far: {score} / 480</p> : null }
 					<h2>Round {roundNumber+1}</h2>
-						{ marked ? <span>Connection: {((questions.get(roundNumber)).get(10)).get(1)} </span>
+						{ marked ? <span>Connection: {((questions.get(roundNumber)).get(10)).get(1)}</span>
 						: <div className="question">
 							<span>Connection: </span>
 							<input type="text" onChange={this.update}/>
@@ -70,8 +70,11 @@ class Round extends Component {
 					{ songNumbers.map((songNumber, index) =>
 						<div className="question" key={index}>
 							<Audio roundNumber={roundNumber} songNumber={songNumber} decreaseBonusPoints={decreaseBonusPoints}/>
-							<Input placeholder="Song" which="0" roundNumber={roundNumber} songNumber={songNumber} questions={questions} increaseScore={increaseScore} marked={marked}/>
-							<Input placeholder="Artist" which="1" roundNumber={roundNumber} songNumber={songNumber} questions={questions} increaseScore={increaseScore} marked={marked}/>
+							{ marked ? <div className="songAnswer">{((questions.get(roundNumber)).get(songNumber)).get(0)} — {((questions.get(roundNumber)).get(songNumber)).get(1)}</div>
+							: <div className="inputs">
+								<Input placeholder="Song" which="0" roundNumber={roundNumber} songNumber={songNumber} questions={questions} increaseScore={increaseScore} marked={marked}/>
+								<Input placeholder="Artist" which="1" roundNumber={roundNumber} songNumber={songNumber} questions={questions} increaseScore={increaseScore} marked={marked}/>
+							</div> }
 						</div>
 					)}
 					{ marked ? <button className="continue" onClick={this.continue}>Continue ></button> : <button className="continue" onClick={this.mark}>Mark answers</button> }
