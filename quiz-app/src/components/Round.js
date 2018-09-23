@@ -8,6 +8,7 @@ class Round extends Component {
 		this.state = {
 			guess: "",
 			connectionButton: true,
+			correct: false,
 			marked: false,
 		}
 		this.update = this.update.bind(this);
@@ -17,50 +18,44 @@ class Round extends Component {
 	}
 
 	update(e) {
-		const guess = this.state.guess;
-		this.setState ({
-			guess: e.target.value.toLowerCase(),
-		});
+		if (this.state.connectionButton) {
+			this.setState ({ guess: e.target.value.toLowerCase() });
+		}
 	}
 
 	check(e) {
 		e.preventDefault();
 		const { roundNumber, questions, bonusPoints } = this.props;
-		const { guess, connectionButton } = this.state;
+		const { guess } = this.state;
 		const connection = ((questions.get(roundNumber)).get(10)).get(0);
 		if (guess.indexOf(connection) > -1) {
 			this.props.increaseScore(bonusPoints);
+			this.setState ({ correct: true });
 		}
-		this.setState ({
-			connectionButton: false,
-		});
+		this.setState ({ connectionButton: false });
 	}
 
 	mark() {
-		this.setState ({
-			marked: true,
-		});
+		this.setState ({ marked: true });
 	}
 
 	continue() {
-		this.setState ({
-			marked: false,
-			connectionButton: true,
-		});
+		this.setState ({ guess: "", connectionButton: true, correct: false, marked: false });
 		this.props.increaseRoundNumber();
 		this.props.resetBonusPoints();
 	}
 
 	render() {
 		const songNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-		const { roundNumber, score, bonusPoints, questions, increaseRoundNumber, increaseScore, decreaseBonusPoints } = this.props;
-		const { connectionButton, marked } = this.state;
+		const { roundNumber, score, bonusPoints, questions, increaseScore, decreaseBonusPoints } = this.props;
+		const { guess, connectionButton, correct, marked } = this.state;
+		console.log(guess);
 		return (
 			<div>
 				<div>
-					{ marked ? <p className="total">Total so far: {score} / 480</p> : null }
+					<p className="total">Total so far: {score} / 480</p>
 					<h2>Round {roundNumber+1}</h2>
-						{ marked ? <span>Connection: {((questions.get(roundNumber)).get(10)).get(1)}</span>
+						{ marked ? <span>Connection: {((questions.get(roundNumber)).get(10)).get(1)} ... {guess} {correct ? "✔" : "✗"} </span>
 						: <div className="question">
 							<span>Connection: </span>
 							<input type="text" onChange={this.update}/>
@@ -69,12 +64,10 @@ class Round extends Component {
 						}
 					{ songNumbers.map((songNumber, index) =>
 						<div className="question" key={index}>
-							<Audio roundNumber={roundNumber} songNumber={songNumber} decreaseBonusPoints={decreaseBonusPoints}/>
-							{ marked ? <div className="songAnswer">{((questions.get(roundNumber)).get(songNumber)).get(0)} — {((questions.get(roundNumber)).get(songNumber)).get(1)}</div>
-							: <div className="inputs">
-								<Input placeholder="Song" which="0" roundNumber={roundNumber} songNumber={songNumber} questions={questions} increaseScore={increaseScore} marked={marked}/>
-								<Input placeholder="Artist" which="1" roundNumber={roundNumber} songNumber={songNumber} questions={questions} increaseScore={increaseScore} marked={marked}/>
-							</div> }
+							<Audio roundNumber={roundNumber} songNumber={songNumber} decreaseBonusPoints={decreaseBonusPoints} marked={marked}/>
+							{ marked ? <div className="songAnswer">{((questions.get(roundNumber)).get(songNumber)).get(0)} — {((questions.get(roundNumber)).get(songNumber)).get(1)} ... </div> : null }
+							<Input placeholder="Song" which="0" roundNumber={roundNumber} songNumber={songNumber} questions={questions} increaseScore={increaseScore} marked={marked}/>
+							<Input placeholder="Artist" which="1" roundNumber={roundNumber} songNumber={songNumber} questions={questions} increaseScore={increaseScore} marked={marked}/>
 						</div>
 					)}
 					{ marked ? <button className="continue" onClick={this.continue}>Continue ></button> : <button className="continue" onClick={this.mark}>Mark answers</button> }

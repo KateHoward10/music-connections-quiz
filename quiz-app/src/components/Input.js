@@ -5,41 +5,41 @@ class Input extends Component {
 		super(props);
 		this.state = {
 			answer: "",
-			correct: !(this.props.marked),
+			correct: this.props.marked,
+			guessed: false,
 		}
 		this.update = this.update.bind(this);
 		this.check = this.check.bind(this);
 	}
 
 	update(e) {
-		this.setState ({
-			answer: e.target.value.toLowerCase().replace(/[.,!?'`’&()]/g,""),
-		});
+		if (!this.state.guessed) {
+			this.setState ({ answer: e.target.value.toLowerCase().replace(/[.,!?'`’&()]/g,"") });
+		}
 	}
 
 	check(e) {
+		e.preventDefault();
 		const { which, questions, songNumber, roundNumber } = this.props;
-		const { answer, guessed } = this.state;
+		const { answer, correct } = this.state;
 		const rightAnswer = ((questions.get(roundNumber)).get(songNumber)).get(which).toLowerCase().replace(/[.,!?'`’&()]/g,"");
-		if (!guessed && answer===rightAnswer) {
-			this.setState ({
-				correct: true,
-			})
+		if (!correct && answer===rightAnswer) {
+			this.setState ({ correct: true })
 			this.props.increaseScore(1);
 		}
 	}
 
 	render() {
-		const { which, number, questions, songNumber, roundNumber, marked } = this.props;
-		const { correct, showButton } = this.state;
-		const song = (questions.get(roundNumber)).get(songNumber);
+		const { which, marked } = this.props;
+		const { answer, correct } = this.state;
 		return (
-			<form>
-			    <input type="text" onInput={this.update} onBlur={this.check} placeholder={which==="0" ? "Song" : which==="1" ? "Artist" : "" }/>
-			</form>
+			<div>
+				{ marked ? <span>{answer} { correct ? "✔  " : "✗  " }</span>
+				: <input type="text" onChange={this.update} onBlur={this.check} placeholder={which==="0" ? "Song" : which==="1" ? "Artist" : "" }/>
+				}
+			</div>
 		)
 	}
-
 };
 
 export default Input;
