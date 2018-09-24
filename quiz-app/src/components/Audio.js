@@ -4,26 +4,30 @@ class Audio extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			played: this.props.marked,
+			played: false,
 		}
 		this.play = this.play.bind(this);
+		this.reload = this.reload.bind(this);
 	}
 
 	play() {
-		const played = this.state.played;
-		if (!played) {
+		if (!this.state.played) {
 			this.props.decreaseBonusPoints();
 			this.setState ({ played: true });
 		};
 	}
 
+	reload() {
+		this.setState ({ played: false });
+	}
+
 	render() {
 		const { roundNumber, songNumber } = this.props;
 		const song = require(`../music/${roundNumber}/${songNumber}.mp3`);
+		console.log(this.state.played);
 		return (
 			<div>
-				<p>{this.state.played}</p>
-				<audio onPlay={this.play} controls="controls" src={song}></audio>
+				<audio onPlay={this.play} onLoadedData={this.reload} controls="controls" src={song}></audio>
 			</div>
 		)
 	}
