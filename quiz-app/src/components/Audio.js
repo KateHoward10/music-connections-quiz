@@ -25,7 +25,7 @@ class Audio extends Component {
 		const { roundNumber, songNumber } = this.props;
 		const song = require(`../music/${roundNumber}/${songNumber}.mp3`);
 		return (
-			<audio onPlay={this.play} onLoadedData={this.reload} controls="controls" src={song}></audio>
+			<audio onPlay={this.play} onLoadedData={this.reload} controls="controls" controlsList="nodownload" src={song}></audio>
 		)
 	}
 
