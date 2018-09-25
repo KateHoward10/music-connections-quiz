@@ -23,11 +23,16 @@ class Round extends Component {
 		}
 	}
 
-	check(e) {
+	check() {
 		const { roundNumber, questions, bonusPoints } = this.props;
 		const { guess } = this.state;
 		const connection = ((questions.get(roundNumber)).get(10)).get(0);
-		if (guess.indexOf(connection) > -1) {
+		if (connection.length === 2) {
+			if (guess.indexOf(connection[0]) > -1 || guess.indexOf(connection[1]) > -1) {
+				this.props.increaseScore(bonusPoints);
+				this.setState ({ correct: true });
+			}
+		} else if (guess.indexOf(connection) > -1) {
 			this.props.increaseScore(bonusPoints);
 			this.setState ({ correct: true });
 		}
@@ -68,7 +73,7 @@ class Round extends Component {
 							<Input placeholder="Artist" which="1" roundNumber={roundNumber} songNumber={songNumber} questions={questions} increaseScore={increaseScore} marked={marked}/>
 						</div>
 					)}
-					{ marked ? <button className="continue" onClick={this.continue}>Continue ></button> : <button className="continue" onClick={this.mark}>Mark answers</button> }
+					{ marked ? <button className="continue" onClick={this.continue}>Continue ></button> : <button className="continue" onClick={this.mark}>Mark Answers</button> }
 				</div>
 			</div>
 		)

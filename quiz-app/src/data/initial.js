@@ -55,7 +55,7 @@ const initial = Map({
 			List([ "Kiss From a Rose", "Seal" ]),
 			List([ "White Rabbit", "Jefferson Airplane" ]),
 			List([ "I Am The Walrus", "Beatles" ]),
-			List([ "animal", "animals"])
+			List([ ["animal", "mammal"], "animals"])
 		]),
 		List([
 			List([ "Hounds of Love","Kate Bush"]),
@@ -68,7 +68,7 @@ const initial = Map({
 			List([ "London Calling", "The Clash" ]),
 			List([ "What’s Going On", "Marvin Gaye" ]),
 			List([ "Heroes", "David Bowie" ]),
-			List([ "title", "title tracks from albums" ])
+			List([ "album", "title tracks from albums" ])
 		]),
 		List([
 			List([ "Brothers in Arms", "Dire Straits" ]),
@@ -107,7 +107,7 @@ const initial = Map({
 			List([ "Baba O’Riley", "The Who" ]),
 			List([ "Laid", "James" ]),
 			List([ "The Bad Touch", "Bloodhound Gang" ]),
-			List([ "title", "song titles missing from lyrics" ])
+			List([ ["title", "lyrics"], "song titles missing from lyrics" ])
 		]),
 		List([
 			List([ "Intervention", "Arcade Fire" ]),

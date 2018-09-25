@@ -15,7 +15,7 @@ class Input extends Component {
 		this.setState ({ answer: e.target.value.toLowerCase().replace(/[.,!?'`’&()]/g,"") });
 	}
 
-	check(e) {
+	check() {
 		const { which, questions, songNumber, roundNumber } = this.props;
 		const { answer, right } = this.state;
 		const rightAnswer = ((questions.get(roundNumber)).get(songNumber)).get(which).toLowerCase().replace(/[.,!?'`’&()]/g,"");
