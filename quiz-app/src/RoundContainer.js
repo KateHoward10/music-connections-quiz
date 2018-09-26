@@ -7,7 +7,7 @@ const mapStateToProps = state => {
 		roundNumber: state.get("roundNumber"),
 		score: state.get("score"),
 		bonusPoints: state.get("bonusPoints"),
-		questions: state.get("questions"),
+		answers: state.get("answers"),
 	};
 };
 

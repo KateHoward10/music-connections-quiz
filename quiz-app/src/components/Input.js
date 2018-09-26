@@ -12,16 +12,25 @@ class Input extends Component {
 	}
 
 	update(e) {
-		this.setState ({ answer: e.target.value.toLowerCase().replace(/[.,!?'`’&()]/g,"") });
+		this.setState ({ answer: e.target.value.toLowerCase().replace(/[.,!?/'`’&()]|the |and |& /gi,"") });
 	}
 
 	check() {
-		const { which, questions, songNumber, roundNumber } = this.props;
+		const { which, answers, songNumber, roundNumber } = this.props;
 		const { answer, right } = this.state;
-		const rightAnswer = ((questions.get(roundNumber)).get(songNumber)).get(which).toLowerCase().replace(/[.,!?'`’&()]/g,"");
-		if (!right && answer===rightAnswer) {
-			this.setState ({ right: true })
-			this.props.increaseScore(1);
+		const rightAnswer = answers[roundNumber][songNumber][which];
+		if (!right) {
+			if (rightAnswer.length===2) {
+				if (answer===rightAnswer[0].toLowerCase().replace(/[.,!?/'`’&()]|the|and|&/gi,"") || answer===rightAnswer[1].toLowerCase().replace(/[.,!?'`’&()]|the|and|&/gi,"")) {
+					this.setState ({ right: true })
+					this.props.increaseScore(1);
+				}
+			} else {
+				if (answer===rightAnswer.toLowerCase().replace(/[.,!?/'`’&()]|the|and|&/gi,"")) {
+					this.setState ({ right: true })
+					this.props.increaseScore(1);
+				}
+			}
 		}
 	}
 
