@@ -12,21 +12,24 @@ class Input extends Component {
 	}
 
 	update(e) {
-		this.setState ({ answer: e.target.value.toLowerCase().replace(/[.,!?/'`’&()]|the |and |& /gi,"") });
+		this.setState ({ answer: e.target.value });
 	}
 
 	check() {
 		const { which, answers, songNumber, roundNumber } = this.props;
-		const { answer, right } = this.state;
+		const { right } = this.state;
+		const answer = this.state.answer.toLowerCase().replace(/[.,!?/'`’()]|-|the |and |& /gi,"");
 		const rightAnswer = answers[roundNumber][songNumber][which];
+		console.log(rightAnswer);
+		console.log(answer);
 		if (!right) {
 			if (rightAnswer.length===2) {
-				if (answer===rightAnswer[0].toLowerCase().replace(/[.,!?/'`’&()]|the|and|&/gi,"") || answer===rightAnswer[1].toLowerCase().replace(/[.,!?'`’&()]|the|and|&/gi,"")) {
+				if (answer===rightAnswer[0].toLowerCase().replace(/[.,!?/'`’()]|-|the |and |& /gi,"") || answer===rightAnswer[1].toLowerCase().replace(/[.,!?'`’&()]|the|and|&/gi,"")) {
 					this.setState ({ right: true })
 					this.props.increaseScore(1);
 				}
 			} else {
-				if (answer===rightAnswer.toLowerCase().replace(/[.,!?/'`’&()]|the|and|&/gi,"")) {
+				if (answer===rightAnswer.toLowerCase().replace(/[.,!?/'`’()]|-|the |and |& /gi,"")) {
 					this.setState ({ right: true })
 					this.props.increaseScore(1);
 				}
@@ -45,7 +48,7 @@ class Input extends Component {
 		const { answer, right } = this.state;
 		return (
 			<div>
-				{ marked ? <span>{answer} { right ? "✔  " : "✗  " }</span>
+				{ marked ? <span><i>{answer}</i> { right ? "✔  " : "✗  " }</span>
 				: <input type="text" onChange={this.update} onBlur={this.check} placeholder={which==="0" ? "Song" : which==="1" ? "Artist" : "" }/>
 				}
 			</div>

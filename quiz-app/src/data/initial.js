@@ -28,7 +28,7 @@ const initial = Map({
 			[ "Smoke On The Water", "Deep Purple" ],
 			[ "Pretty in Pink", "Psychedelic Furs" ],
 			[ "Yellow", "Coldplay" ],
-			[ "Purple Haze", "Jimi Hendrix" ],
+			[ "Purple Haze", ["The Jimi Hendrix Experience", "Jimi Hendrix"] ],
 			[ "colour", "colours" ]
 		],
 		[
@@ -54,7 +54,7 @@ const initial = Map({
 			[ "Float On", "Modest Mouse" ],
 			[ "Kiss From a Rose", "Seal" ],
 			[ "White Rabbit", "Jefferson Airplane" ],
-			[ "I Am The Walrus", "Beatles" ],
+			[ "I Am The Walrus", "The Beatles" ],
 			[ ["animal", "mammal"], "animals"]
 		],
 		[
@@ -63,7 +63,7 @@ const initial = Map({
 			[ "Lust For Life", "Iggy Pop" ],
 			[ "Wish You Were Here", "Pink Floyd" ],
 			[ "All The Young Dudes", "Mott the Hoople" ],
-			[ "Hotel California", "Eagles" ],
+			[ "Hotel California", "The Eagles" ],
 			[ "Purple Rain", "Prince" ],
 			[ "London Calling", "The Clash" ],
 			[ "What’s Going On", "Marvin Gaye" ],
@@ -80,7 +80,7 @@ const initial = Map({
 			[ "Papa Don’t Preach", "Madonna" ],
 			[ "My Perfect Cousin", "The Undertones" ],
 			[ "Stay", "Shakespears Sister" ],
-			[ "Sweet Child o’ Mine", "Guns ’n’ Roses" ],
+			[ "Sweet Child o’ Mine", "Guns N’ Roses" ],
 			[ "family", "family members" ]
 		],
 		[
@@ -89,7 +89,7 @@ const initial = Map({
 			[ "Only You", "Flying Pickets", ],
 			[ "Earth Song", "Michael Jackson" ],
 			[ "Always On My Mind", "Pet Shop Boys" ],
-			[ ["Another Brick in the Wall Pt 2", "Another Brick in the Wall Part 2"], "Pink Floyd" ],
+			[ ["Another Brick in the Wall (Part 2)", "Another Brick in the Wall"], "Pink Floyd" ],
 			[ "Killing in the Name", "Rage Against The Machine" ],
 			[ "Too Much", "Spice Girls" ],
 			[ "Don’t You Want Me", "Human League" ],
@@ -112,8 +112,8 @@ const initial = Map({
 		[
 			[ "Intervention", "Arcade Fire" ],
 			[ "We Didn’t Start The Fire", "Billy Joel" ],
-			[ "September", "Earth, Wind and Fire" ],
-			["I’m On Fire", "Bruce Springsteen" ],
+			[ "September", "Earth, Wind & Fire" ],
+			[ "I’m On Fire", "Bruce Springsteen" ],
 			[ "Great Balls of Fire", "Jerry Lee Lewis" ],
 			[ "Relight My Fire", "Take That" ],
 			[ "Light My Fire", "The Doors" ],
@@ -164,7 +164,7 @@ const initial = Map({
 		[
 			[ "Across 110th Street", "Bobby Womack" ],
 			[ "Song 2", "Blur" ],
-			[ "Edge of Seventeen", "Stevie Nicks" ],
+			[ ["Edge of Seventeen", "Edge of 17"], "Stevie Nicks" ],
 			[ "Dreadlock Holiday", "10cc" ],
 			[ "99 Problems", "Jay Z" ],
 			[ "54-46 Was My Number", "Toots & The Maytals" ],
@@ -176,7 +176,7 @@ const initial = Map({
 		],
 		[
 			[ "Red Red Wine", "UB40" ],
-			[ "Whisky in the Jar", "Thin Lizzy" ],
+			[ ["Whiskey in the Jar", "Whisky in the Jar"], "Thin Lizzy" ],
 			[ "Rip It Up", "Orange Juice" ],
 			[ "Escape", "Rupert Holmes" ],
 			[ "I Am A Cider Drinker","The Wurzels" ],

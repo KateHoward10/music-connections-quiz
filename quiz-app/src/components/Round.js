@@ -70,7 +70,7 @@ class Round extends Component {
 					<div>
 						<p className="total">Total so far: {score} / 480</p>
 						<h2>Round {roundNumber+1}</h2>
-							{ marked ? <span>Connection: {answers[roundNumber][10][1]} ... {guess} {correct ? "✔" : "✗"} </span>
+							{ marked ? <span>Connection: <em>{answers[roundNumber][10][1]}</em> ... {guess} {correct ? "✔" : "✗"} </span>
 							: <div className="question">
 								<span>Connection: </span>
 								<input type="text" onChange={this.update}/>
@@ -80,7 +80,7 @@ class Round extends Component {
 						{ songNumbers.map((songNumber, index) =>
 							<div className="question" key={index}>
 								<Audio roundNumber={roundNumber} songNumber={songNumber} decreaseBonusPoints={decreaseBonusPoints}/>
-								{ marked ? <div className="songAnswer">{answers[roundNumber][songNumber][0]} — {answers[roundNumber][songNumber][1].length===2 ? answers[roundNumber][songNumber][1][0] : answers[roundNumber][songNumber][1] } ... </div> : null }
+								{ marked ? <div className="songAnswer">{answers[roundNumber][songNumber][0].length===2 ? answers[roundNumber][songNumber][0][0] : answers[roundNumber][songNumber][0] } — {answers[roundNumber][songNumber][1].length===2 ? answers[roundNumber][songNumber][1][0] : answers[roundNumber][songNumber][1] } ... </div> : null }
 								<Input placeholder="Song" which="0" roundNumber={roundNumber} songNumber={songNumber} answers={answers} increaseScore={increaseScore} marked={marked}/>
 								<Input placeholder="Artist" which="1" roundNumber={roundNumber} songNumber={songNumber} answers={answers} increaseScore={increaseScore} marked={marked}/>
 							</div>
