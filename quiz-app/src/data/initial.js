@@ -1,10 +1,10 @@
-import { Map, List } from "immutable";
+import { Map } from "immutable";
 
 const initial = Map({
-	roundNumber: 0,
+	roundNumber: 5,
 	score: 0,
 	bonusPoints: 10,
-	answers: ([
+	answers: [
 		[
 			[ "Heart of Glass", "Blondie" ],
 			[ "Killer Queen", "Queen" ],
@@ -72,15 +72,15 @@ const initial = Map({
 		],
 		[
 			[ "Brothers in Arms", "Dire Straits" ],
-			[ "Fortunate Son", "Creedence Clearwater Revival" ],
+			[ "Fortunate Son", ["Creedence Clearwater Revival", "CCR"] ],
 			[ "AM 180", "Grandaddy" ],
-			[ "California Dreamin", "Mamas & The Papas" ],
+			[ ["California Dreamin'", "California Dreaming"], "Mamas & The Papas" ],
 			[ "He Ain’t Heavy, He’s My Brother", "The Hollies" ],
 			[ "Lost in Music", "Sister Sledge" ],
 			[ "Papa Don’t Preach", "Madonna" ],
 			[ "My Perfect Cousin", "The Undertones" ],
 			[ "Stay", "Shakespears Sister" ],
-			[ "Sweet Child o’ Mine", "Guns N’ Roses" ],
+			[ ["Sweet Child o’ Mine", "Sweet Child of Mine"], ["Guns N’ Roses", "Guns and Roses"] ],
 			[ "family", "family members" ]
 		],
 		[
@@ -100,7 +100,7 @@ const initial = Map({
 			[ "Bohemian Rhapsody", "Queen" ],
 			[ "Paranoid", "Black Sabbath" ],
 			[ "Tubthumping", "Chumbawumba" ],
-			[ "What’s Up", ["Four Non-Blondes", "4 Non-Blondes"] ],
+			[ "What’s Up", ["4 Non Blondes", "Four Non Blondes"] ],
 			[ "Buck Rogers", "Feeder" ],
 			[ "Glory Box", "Portishead" ],
 			[ "Iris", "Goo Goo Dolls" ],
@@ -132,7 +132,7 @@ const initial = Map({
 			[ "No Tomorrow", "Orson" ],
 			[ "No Surprises", "Radiohead" ],
 			[ "No Surrender", "Bruce Springsteen" ],
-			[ "No No No", "Dawn Penn" ],
+			[ ["You Don't Love Me (No, No, No)", "No, No, No"], "Dawn Penn" ],
 			[ "no", "no" ]
 		],
 		[
@@ -150,8 +150,8 @@ const initial = Map({
 		],
 		[
 			[ "Highway To Hell", "ACDC" ],
-			[ "Boulevard of Broken Dreams", "Greenday" ],
-			[ "Dancing in the Streets", ["Martha Reeves & the Vandellas", "Martha & the Vandellas"] ],
+			[ "Boulevard of Broken Dreams", ["Green Day", "Greenday"] ],
+			[ "Dancing in the Street", ["Martha Reeves & the Vandellas", "Martha & the Vandellas"] ],
 			[ "Electric Avenue", "Eddy Grant" ],
 			[ "Street Fighting Man", "Rolling Stones" ],
 			[ "Road To Nowhere", "Talking Heads" ],
@@ -167,18 +167,18 @@ const initial = Map({
 			[ ["Edge of Seventeen", "Edge of 17"], "Stevie Nicks" ],
 			[ "Dreadlock Holiday", "10cc" ],
 			[ "99 Problems", "Jay Z" ],
-			[ "54-46 Was My Number", "Toots & The Maytals" ],
+			[ ["54-46 (That's My Number)", "54-46 Was My Number"], "Toots & The Maytals" ],
 			[ "I Can’t Help Myself", "Four Tops" ],
-			[ "Two Out Of Three Ain’t Bad", "Meatloaf" ],
+			[ "Two Out Of Three Ain’t Bad", ["Meat Loaf", "Meatloaf"] ],
 			[ "500 Miles", "Proclaimers" ],
-			[ "Seven Nation Army", "White Stripes" ],
+			[ ["Seven Nation Army", "7 Nation Army"], "White Stripes" ],
 			[ "number", "numbers" ]
 		],
 		[
 			[ "Red Red Wine", "UB40" ],
 			[ ["Whiskey in the Jar", "Whisky in the Jar"], "Thin Lizzy" ],
 			[ "Rip It Up", "Orange Juice" ],
-			[ "Escape", "Rupert Holmes" ],
+			[ "Milk & Alcohol", "Dr Feelgood" ],
 			[ "I Am A Cider Drinker","The Wurzels" ],
 			[ "Champagne Supernova", "Oasis" ],
 			[ "Coffee & TV", "Blur" ],
@@ -192,7 +192,7 @@ const initial = Map({
 			[ "Proud Mary", ["Creedence Clearwater Revival", "CCR"] ],
 			[ "Remember Me", ["British Sea Power", "BSP"] ],
 			[ "Enola Gay", ["Orchestral Manoeuvres in the Dark", "OMD"] ],
-			[ "Fuk Da Police", "NWA" ],
+			[ "Express Yourself", "N.W.A" ],
 			[ "Spitfire", ["Public Service Broadcasting", "PSB"] ],
 			[ "When Smokey Sings", "ABC" ],
 			[ "Unbelievable", "EMF" ],
@@ -210,10 +210,10 @@ const initial = Map({
 			[ "Why Can’t We Be Friends?", "War" ],
 			[ "Where Is My Mind?", "Pixies" ],
 			[ "How Soon Is Now?", "The Smiths" ],
-			[ "Do You Realize??", "Flaming Lips" ],
-			[ "question", "question marks?" ]
+			[ ["Do You Realize??", "Do you realise??"], "Flaming Lips" ],
+			[ "question", "a series of very important questions" ]
 		]
-	])
+	]
 })
 
 export default initial;

@@ -18,18 +18,16 @@ class Input extends Component {
 	check() {
 		const { which, answers, songNumber, roundNumber } = this.props;
 		const { right } = this.state;
-		const answer = this.state.answer.toLowerCase().replace(/[.,!?/'`’()]|-|the |and |& /gi,"");
+		const answer = this.state.answer.toLowerCase().replace(/[.,!?/'`’()-]|the |and |& /gi,"");
 		const rightAnswer = answers[roundNumber][songNumber][which];
-		console.log(rightAnswer);
-		console.log(answer);
 		if (!right) {
-			if (rightAnswer.length===2) {
-				if (answer===rightAnswer[0].toLowerCase().replace(/[.,!?/'`’()]|-|the |and |& /gi,"") || answer===rightAnswer[1].toLowerCase().replace(/[.,!?'`’&()]|the|and|&/gi,"")) {
+			if (Array.isArray(rightAnswer)) {
+				if (answer===rightAnswer[0].toLowerCase().replace(/[.,!?/'`’()-]|the |and |& /gi,"") || answer===rightAnswer[1].toLowerCase().replace(/[.,!?/'`’()]|-|the |and |& /gi,"") || answer===rightAnswer[2].toLowerCase().replace(/[.,!?/'`’()]|-|the |and |& /gi,"")) {
 					this.setState ({ right: true })
 					this.props.increaseScore(1);
 				}
 			} else {
-				if (answer===rightAnswer.toLowerCase().replace(/[.,!?/'`’()]|-|the |and |& /gi,"")) {
+				if (answer===rightAnswer.toLowerCase().replace(/[.,!?/'`’()-]|the |and |& /gi,"")) {
 					this.setState ({ right: true })
 					this.props.increaseScore(1);
 				}
