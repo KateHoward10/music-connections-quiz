@@ -1,7 +1,7 @@
 import { Map } from "immutable";
 
 const initial = Map({
-	roundNumber: 5,
+	roundNumber: 7,
 	score: 0,
 	bonusPoints: 10,
 	answers: [
@@ -79,7 +79,7 @@ const initial = Map({
 			[ "Lost in Music", "Sister Sledge" ],
 			[ "Papa Don’t Preach", "Madonna" ],
 			[ "My Perfect Cousin", "The Undertones" ],
-			[ "Stay", "Shakespears Sister" ],
+			[ "Stay", ["Shakespears Sister", "Shakespeare's Sister"] ],
 			[ ["Sweet Child o’ Mine", "Sweet Child of Mine"], ["Guns N’ Roses", "Guns and Roses"] ],
 			[ "family", "family members" ]
 		],
@@ -162,13 +162,13 @@ const initial = Map({
 			[ ["road", "street"], "roads" ]
 		],
 		[
-			[ "Across 110th Street", "Bobby Womack" ],
+			[ ["Across 110th Street", "Across 110th St"], "Bobby Womack" ],
 			[ "Song 2", "Blur" ],
 			[ ["Edge of Seventeen", "Edge of 17"], "Stevie Nicks" ],
 			[ "Dreadlock Holiday", "10cc" ],
-			[ "99 Problems", "Jay Z" ],
-			[ ["54-46 (That's My Number)", "54-46 Was My Number"], "Toots & The Maytals" ],
-			[ "I Can’t Help Myself", "Four Tops" ],
+			[ "99 Problems", "Jay-Z" ],
+			[ ["54-46 Was My Number", "54-46 That's My Number"], "Toots & The Maytals" ],
+			[ "I Can’t Help Myself", ["The Four Tops", "4 Tops"] ],
 			[ "Two Out Of Three Ain’t Bad", ["Meat Loaf", "Meatloaf"] ],
 			[ "500 Miles", "Proclaimers" ],
 			[ ["Seven Nation Army", "7 Nation Army"], "White Stripes" ],
@@ -204,13 +204,13 @@ const initial = Map({
 			[ "What’s The Frequency, Kenneth?", "REM" ],
 			[ "Life on Mars?", "David Bowie" ],
 			[ "Have You Ever Seen The Rain?", ["Creedence Clearwater Revival", "CCR"] ],
-			[ "Are You Experienced?", ["Jimi Hendrix", "The Jimi Hendrix Experience"] ],
+			[ "Are You Experienced?", ["The Jimi Hendrix Experience", "Jimi Hendrix"] ],
 			[ "Where Is The Love?", "Black Eyed Peas" ],
 			[ "Who Let The Dogs Out?", "Baha Men" ],
 			[ "Why Can’t We Be Friends?", "War" ],
 			[ "Where Is My Mind?", "Pixies" ],
 			[ "How Soon Is Now?", "The Smiths" ],
-			[ ["Do You Realize??", "Do you realise??"], "Flaming Lips" ],
+			[ ["Do You Realize??", "Do You Realise??"], "Flaming Lips" ],
 			[ "question", "a series of very important questions" ]
 		]
 	]

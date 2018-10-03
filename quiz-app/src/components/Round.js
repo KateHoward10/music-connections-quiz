@@ -37,9 +37,11 @@ class Round extends Component {
 				this.props.increaseScore(bonusPoints);
 				this.setState ({ correct: true });
 			}
-		} else if (guess.indexOf(connection) > -1) {
-			this.props.increaseScore(bonusPoints);
-			this.setState ({ correct: true });
+		} else {
+			if (guess.indexOf(connection) > -1) {
+				this.props.increaseScore(bonusPoints);
+				this.setState ({ correct: true });
+			}
 		}
 		this.setState ({ connectionButton: false });
 	}
