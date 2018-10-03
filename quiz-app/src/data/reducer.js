@@ -5,7 +5,7 @@ const increaseScore = (state, {points}) => state.update("score", score => score+
 
 const decreaseBonusPoints = (state, action) => state.update("bonusPoints", bonusPoints => bonusPoints-1);
 
-const resetBonusPoints = (state, action) => state.update("bonusPoints", bonusPoints => 10);
+const resetBonusPoints = (state, action) => state.update("bonusPoints", bonusPoints => 11);
 
 const reducer = (state, action) => {
 	switch (action.type) {

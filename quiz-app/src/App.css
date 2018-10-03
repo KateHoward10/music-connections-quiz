@@ -7,31 +7,33 @@ input {
   font-size: 14px;
 }
 
-.inputs {
-  display: flex;
-  flex-direction: row;
-}
-
 .question {
+  margin-top: 20px; 
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 20px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.inputs {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.App-title {
-  font-size: 1.5em;
+.markedAnswers {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
 }
 
-.App-intro {
-  font-size: large;
+.individualAnswer {
+  margin-left: 20px;
+}
+
+.song {
+  display: flex;
+  flex-direction: column;
 }
 
 .total {
@@ -44,6 +46,7 @@ input {
 
 .songAnswer {
   margin-left: 20px;
+  margin-top: 5px;
 }
 
 button {

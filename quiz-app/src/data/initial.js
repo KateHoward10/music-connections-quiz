@@ -3,7 +3,7 @@ import { Map } from "immutable";
 const initial = Map({
 	roundNumber: 7,
 	score: 0,
-	bonusPoints: 10,
+	bonusPoints: 11,
 	answers: [
 		[
 			[ "Heart of Glass", "Blondie" ],
