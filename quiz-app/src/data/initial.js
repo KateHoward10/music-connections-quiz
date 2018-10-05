@@ -1,7 +1,7 @@
 import { Map } from "immutable";
 
 const initial = Map({
-	roundNumber: 7,
+	roundNumber: 0,
 	score: 0,
 	bonusPoints: 11,
 	answers: [
@@ -48,7 +48,7 @@ const initial = Map({
 			[ "I Don’t Like Mondays", "Boomtown Rats" ],
 			[ "Black Dog", "Led Zeppelin" ],
 			[ "Cool For Cats", "Squeeze" ],
-			[ "Tiger Feet", "Mud" ],
+			[ "Eye of the Tiger", "Survivor" ],
 			[ "Fluorescent Adolescent", "Arctic Monkeys" ],
 			[ "Gold Lion", "Yeah Yeah Yeahs" ],
 			[ "Float On", "Modest Mouse" ],
@@ -62,7 +62,7 @@ const initial = Map({
 			[ "Bridge Over Troubled Water", "Simon & Garfunkel" ],
 			[ "Lust For Life", "Iggy Pop" ],
 			[ "Wish You Were Here", "Pink Floyd" ],
-			[ "All The Young Dudes", "Mott the Hoople" ],
+			[ "Thriller", "Michael Jackson" ],
 			[ "Hotel California", "The Eagles" ],
 			[ "Purple Rain", "Prince" ],
 			[ "London Calling", "The Clash" ],
@@ -73,7 +73,7 @@ const initial = Map({
 		[
 			[ "Brothers in Arms", "Dire Straits" ],
 			[ "Fortunate Son", ["Creedence Clearwater Revival", "CCR"] ],
-			[ "AM 180", "Grandaddy" ],
+			[ "A.M. 180", "Grandaddy" ],
 			[ ["California Dreamin'", "California Dreaming"], "Mamas & The Papas" ],
 			[ "He Ain’t Heavy, He’s My Brother", "The Hollies" ],
 			[ "Lost in Music", "Sister Sledge" ],
@@ -90,7 +90,7 @@ const initial = Map({
 			[ "Earth Song", "Michael Jackson" ],
 			[ "Always On My Mind", "Pet Shop Boys" ],
 			[ ["Another Brick in the Wall (Part 2)", "Another Brick in the Wall"], "Pink Floyd" ],
-			[ "Killing in the Name", "Rage Against The Machine" ],
+			[ ["Killing in the Name", "Killing in the Name Of"], "Rage Against The Machine" ],
 			[ "Too Much", "Spice Girls" ],
 			[ "Don’t You Want Me", "Human League" ],
 			[ "Do They Know It’s Christmas?", "Band Aid" ],
@@ -114,7 +114,7 @@ const initial = Map({
 			[ "We Didn’t Start The Fire", "Billy Joel" ],
 			[ "September", "Earth, Wind & Fire" ],
 			[ "I’m On Fire", "Bruce Springsteen" ],
-			[ "Great Balls of Fire", "Jerry Lee Lewis" ],
+			[ ["Great Balls of Fire", "Goodness Gracious Great Balls of Fire"], "Jerry Lee Lewis" ],
 			[ "Relight My Fire", "Take That" ],
 			[ "Light My Fire", "The Doors" ],
 			[ "Sex on Fire", "Kings of Leon" ],
@@ -128,7 +128,7 @@ const initial = Map({
 			[ "No Quarter", "Led Zeppelin" ],
 			[ "Don’t Speak", "No Doubt" ],
 			[ "(I Can’t Get No) Satisfaction", "Rolling Stones" ],
-			[ "No Woman No Cry", "Bob Marley" ],
+			[ "No Woman No Cry", ["Bob Marley & The Wailers", "Bob Marley"] ],
 			[ "No Tomorrow", "Orson" ],
 			[ "No Surprises", "Radiohead" ],
 			[ "No Surrender", "Bruce Springsteen" ],
@@ -136,7 +136,7 @@ const initial = Map({
 			[ "no", "no" ]
 		],
 		[
-			[ "No Lucifer", "British Sea Power" ],
+			[ "No Lucifer", ["British Sea Power", "BSP"] ],
 			[ "Devil’s Spoke", "Laura Marling" ],
 			[ "Straight To Hell", "The Clash" ],
 			[ "Chase The Devil", "Max Romeo" ],
@@ -144,7 +144,7 @@ const initial = Map({
 			[ "Devil’s Haircut", "Beck" ],
 			[ "Road To Hell", "Chris Rea" ],
 			[ "Devil In Disguise", ["Elvis Presley", "Elvis"] ],
-			[ "Bat Out Of Hell", "Meatloaf" ],
+			[ "Bat Out Of Hell", ["Meat Loaf", "Meatloaf"] ],
 			[ "Sympathy For The Devil", "Rolling Stones" ],
 			[ ["devil", "hell"], "Hell, or the devil" ]
 		],
@@ -169,8 +169,8 @@ const initial = Map({
 			[ "99 Problems", "Jay-Z" ],
 			[ ["54-46 Was My Number", "54-46 That's My Number"], "Toots & The Maytals" ],
 			[ "I Can’t Help Myself", ["The Four Tops", "4 Tops"] ],
-			[ "Two Out Of Three Ain’t Bad", ["Meat Loaf", "Meatloaf"] ],
-			[ "500 Miles", "Proclaimers" ],
+			[ ["Two Out Of Three Ain’t Bad", "2 Out of 3 Ain't Bad"], ["Meat Loaf", "Meatloaf"] ],
+			[ "500 Miles", "The Proclaimers" ],
 			[ ["Seven Nation Army", "7 Nation Army"], "White Stripes" ],
 			[ "number", "numbers" ]
 		],

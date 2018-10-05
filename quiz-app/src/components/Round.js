@@ -70,10 +70,10 @@ class Round extends Component {
 					</div>
 				:
 					<div>
-						<p className="total">Total so far: {score} / 480</p>
+						{ marked ? <p className="total">Total so far: {score} / 480</p> : null }
 						<h2>Round {roundNumber+1}</h2>
 							{ marked ?
-							<span>Connection: <em>{answers[roundNumber][10][1]}</em> ... {guess} <span style={{color: correct ? 'green' : 'red'}}>{correct ? "✔" : "✗"} </span></span>
+							<span>Connection: {answers[roundNumber][10][1]} ... <em>{guess}</em> <span style={{color: correct ? 'green' : 'red'}}>{correct ? "✔" : "✗"} </span></span>
 							:
 								bonusPoints < 11 ?
 									<div className="question">
