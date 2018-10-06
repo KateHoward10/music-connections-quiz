@@ -28,7 +28,7 @@ const initial = Map({
 			[ "Smoke On The Water", "Deep Purple" ],
 			[ "Pretty in Pink", "Psychedelic Furs" ],
 			[ "Yellow", "Coldplay" ],
-			[ "Purple Haze", ["The Jimi Hendrix Experience", "Jimi Hendrix"] ],
+			[ "Purple Haze", ["Jimi Hendrix", "The Jimi Hendrix Experience"] ],
 			[ "colour", "colours" ]
 		],
 		[
@@ -81,7 +81,7 @@ const initial = Map({
 			[ "My Perfect Cousin", "The Undertones" ],
 			[ "Stay", ["Shakespears Sister", "Shakespeare's Sister"] ],
 			[ ["Sweet Child o’ Mine", "Sweet Child of Mine"], ["Guns N’ Roses", "Guns and Roses"] ],
-			[ "family", "family members" ]
+			[ ["family", "relative"], "family members" ]
 		],
 		[
 			[ "Mary’s Boy Child", "Boney M" ],
@@ -119,7 +119,7 @@ const initial = Map({
 			[ "Light My Fire", "The Doors" ],
 			[ "Sex on Fire", "Kings of Leon" ],
 			[ "Firestarter", "The Prodigy" ],
-			[ "Fire", "Crazy World of Arthur Brown" ],
+			[ "Fire", ["Crazy World of Arthur Brown", "Arthur Brown"] ],
 			[ "fire", "fire" ]
 		],
 		[
@@ -128,7 +128,7 @@ const initial = Map({
 			[ "No Quarter", "Led Zeppelin" ],
 			[ "Don’t Speak", "No Doubt" ],
 			[ "(I Can’t Get No) Satisfaction", "Rolling Stones" ],
-			[ "No Woman No Cry", ["Bob Marley & The Wailers", "Bob Marley"] ],
+			[ "No Woman No Cry", ["Bob Marley", "Bob Marley & The Wailers"] ],
 			[ "No Tomorrow", "Orson" ],
 			[ "No Surprises", "Radiohead" ],
 			[ "No Surrender", "Bruce Springsteen" ],
@@ -185,7 +185,7 @@ const initial = Map({
 			[ "Gin & Juice", "Snoop Dogg" ],
 			[ "You Sexy Thing", "Hot Chocolate" ],
 			[ "Milkshake", "Kelis" ],
-			[ "drink", "drinks" ]
+			[ ["drink", "beverage"], "drinks" ]
 		],
 		[
 			[ "Waterfalls", "TLC" ],
@@ -204,7 +204,7 @@ const initial = Map({
 			[ "What’s The Frequency, Kenneth?", "REM" ],
 			[ "Life on Mars?", "David Bowie" ],
 			[ "Have You Ever Seen The Rain?", ["Creedence Clearwater Revival", "CCR"] ],
-			[ "Are You Experienced?", ["The Jimi Hendrix Experience", "Jimi Hendrix"] ],
+			[ "Are You Experienced?", ["Jimi Hendrix", "The Jimi Hendrix Experience"] ],
 			[ "Where Is The Love?", "Black Eyed Peas" ],
 			[ "Who Let The Dogs Out?", "Baha Men" ],
 			[ "Why Can’t We Be Friends?", "War" ],
