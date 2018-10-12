@@ -14,7 +14,6 @@ class App extends Component {
         </header>
         <p>In each round there are ten points available for the artists, ten points for the songs, and up to ten bonus points for the connection, depending on how soon you get it.</p>
         <p>Each connection also applies to the first song of the next round, so it can be thought of as a reject from the previous round.</p>
-        <p>If you're trying to play this on a phone, I strongly recommend not doing that.</p>
         <p>PLEASE DO NOT REFRESH THE PAGE WHILE PLAYING.</p>
         <RoundContainer/>
       </div>

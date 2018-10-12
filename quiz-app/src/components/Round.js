@@ -70,7 +70,7 @@ class Round extends Component {
 					<div className="end">
 						<p>Congratulations, you have reached the end of the quiz!</p>
 						<p style={{fontWeight: 'bold'}}>Final score: {score} / 480</p>
-						<p>Sadly, there is no share funcationality (yet), but feel free to send me a screenshot.</p>
+						<p>Sadly, there is no share functionality (yet), but feel free to send me a screenshot.</p>
 					</div>
 				:
 					<div>
