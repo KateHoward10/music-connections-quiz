@@ -60,8 +60,12 @@ class Round extends Component {
 		const songNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 		const { roundNumber, score, bonusPoints, answers, increaseScore, decreaseBonusPoints } = this.props;
 		const { guess, connectionButton, correct, marked } = this.state;
+		const progressLength = roundNumber / 16 * 100;
 		return (
 			<div>
+				<div className="progress">
+					<div style={{ backgroundColor: '#279add', width: `${progressLength}%`, height: '10px' }}></div>
+				</div>
 				{ roundNumber===16 ?
 					<div className="end">
 						<p>Congratulations, you have reached the end of the quiz!</p>
@@ -95,7 +99,7 @@ class Round extends Component {
 								</div>
 							</div>
 						)}
-						{ marked ? <button className="continue" onClick={this.continue}>Continue ></button> : <button className="continue" onClick={this.mark}>Mark Answers</button> }
+						{ marked ? <button className="continue" onClick={this.continue}>Continue ></button> : <button className="markAnswers" onClick={this.mark}>Mark Answers</button> }
 					</div>
 				}
 			</div>
