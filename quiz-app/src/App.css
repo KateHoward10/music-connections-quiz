@@ -89,7 +89,7 @@ button {
   border: 1px solid grey;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 700px) {
 
   .songAnswer {
     align-self: flex-start;
@@ -98,7 +98,12 @@ button {
 
   .question {
     align-items: flex-start;
-    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .connectionInput {
+    margin-top: 3px;
+    margin-right: 3px;
   }
 
   .inputs {
@@ -106,8 +111,11 @@ button {
   }
 
   input {
-    width: 100%;
-    border: 1px solid grey;
+    margin: 0;
+  }
+
+  .songInput {
+    margin: 3px;
   }
 
   .markedAnswers {

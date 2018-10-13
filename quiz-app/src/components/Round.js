@@ -81,9 +81,8 @@ class Round extends Component {
 							:
 								bonusPoints < 11 ?
 									<div className="question">
-										<span>Connection: </span>
-										<input type="text" onChange={this.update}/>
-										{ connectionButton ? <button onClick={this.check}>Submit for a possible {bonusPoints} points</button> : <span>Thanks for guessing!</span> }
+										<input type="text" className="connectionInput" onChange={this.update} placeholder="Connection"/>
+										{ connectionButton ? <button className="connectionButton" onClick={this.check}>Submit for a possible {bonusPoints} points</button> : <span>Thanks for guessing!</span> }
 									</div>
 								: null
 							}

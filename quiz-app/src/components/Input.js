@@ -48,7 +48,7 @@ class Input extends Component {
 		return (
 			<div>
 				{ marked ? <span className="individualAnswer"><i>{answer}</i><span style={{color: right ? 'green' : 'red'}}> { right ? "✔  " : "✗  " }</span></span>
-				: <input type="text" onChange={this.update} onBlur={this.check} placeholder={which==="0" ? "Song" : which==="1" ? "Artist" : "" }/>
+				: <input className="songInput" type="text" onChange={this.update} onBlur={this.check} placeholder={which==="0" ? "Song" : which==="1" ? "Artist" : "" }/>
 				}
 			</div>
 		)
