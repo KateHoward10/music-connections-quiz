@@ -151,7 +151,7 @@ const initial = Map({
 		[
 			[ "Highway To Hell", "ACDC" ],
 			[ "Boulevard of Broken Dreams", ["Green Day", "Greenday"] ],
-			[ "Dancing in the Street", ["Martha Reeves & the Vandellas", "Martha & the Vandellas"] ],
+			[ ["Dancing in the Street", "Dancing in the Streets"], ["Martha Reeves & the Vandellas", "Martha & the Vandellas"] ],
 			[ "Electric Avenue", "Eddy Grant" ],
 			[ "Street Fighting Man", "Rolling Stones" ],
 			[ "Road To Nowhere", "Talking Heads" ],
@@ -189,9 +189,9 @@ const initial = Map({
 		],
 		[
 			[ "Waterfalls", "TLC" ],
+			[ "Enola Gay", ["Orchestral Manoeuvres in the Dark", "OMD"] ],
 			[ "Proud Mary", ["Creedence Clearwater Revival", "CCR"] ],
 			[ "Remember Me", ["British Sea Power", "BSP"] ],
-			[ "Enola Gay", ["Orchestral Manoeuvres in the Dark", "OMD"] ],
 			[ "Express Yourself", "N.W.A" ],
 			[ "Spitfire", ["Public Service Broadcasting", "PSB"] ],
 			[ "When Smokey Sings", "ABC" ],
