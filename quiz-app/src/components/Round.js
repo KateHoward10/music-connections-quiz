@@ -27,7 +27,7 @@ class Round extends Component {
 		const { roundNumber, answers, bonusPoints } = this.props;
 		const { guess } = this.state;
 		const connection = answers[roundNumber][10][0];
-		if (roundNumber===3 || roundNumber===5 || roundNumber===10 || roundNumber===11 || roundNumber===13 ) {
+		if (roundNumber===3 || roundNumber===4 || roundNumber===5 || roundNumber===10 || roundNumber===11 || roundNumber===13 ) {
 			if (guess.indexOf(connection[0]) > -1 || guess.indexOf(connection[1]) > -1) {
 				this.props.increaseScore(bonusPoints);
 				this.setState ({ correct: true });

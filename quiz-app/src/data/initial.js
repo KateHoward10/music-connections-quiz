@@ -68,7 +68,7 @@ const initial = Map({
 			[ "London Calling", "The Clash" ],
 			[ "What’s Going On", "Marvin Gaye" ],
 			[ "Heroes", "David Bowie" ],
-			[ "album", "title tracks from albums" ]
+			[ ["album", "title"], "title tracks from albums" ]
 		],
 		[
 			[ "Brothers in Arms", "Dire Straits" ],
