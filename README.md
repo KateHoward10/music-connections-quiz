@@ -6,6 +6,6 @@ I hosted a quiz night once with 16 music intros rounds, each with a connection. 
 ## To run locally
 Required: yarn, command line tool.
 
-1. In the command line, run git clone https://github.com/KateHoward10/music-connections-quiz.git
+1. In the command line, run `git clone git@github.com:KateHoward10/music-connections-quiz.git`
 2. Navigate into music-connections-quiz/quiz app
 3. Run `yarn start`
