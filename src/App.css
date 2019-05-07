@@ -90,6 +90,11 @@ button {
   border: 1px solid grey;
 }
 
+.progress-label {
+  font-size: 12px;
+  margin-top: 2px;
+}
+
 @media screen and (max-width: 700px) {
 
   .songAnswer {

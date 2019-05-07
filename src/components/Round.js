@@ -66,6 +66,7 @@ class Round extends Component {
 				<div className="progress">
 					<div style={{ backgroundColor: '#279add', width: `${progressLength}%`, height: '10px' }}></div>
 				</div>
+				<p className="progress-label">{roundNumber}/16 rounds completed</p>
 				{ roundNumber===16 ?
 					<div className="end">
 						<p>Congratulations, you have reached the end of the quiz!</p>
