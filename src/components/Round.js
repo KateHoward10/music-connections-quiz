@@ -62,7 +62,7 @@ class Round extends Component {
 		const { guess, connectionButton, correct, marked } = this.state;
 		const progressLength = roundNumber / 16 * 100;
 		return (
-			<div>
+			<div className="round">
 				<div className="progress">
 					<div style={{ backgroundColor: '#279add', width: `${progressLength}%`, height: '10px' }}></div>
 				</div>

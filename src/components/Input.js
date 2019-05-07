@@ -20,7 +20,6 @@ class Input extends Component {
 		const { right } = this.state;
 		const answer = this.state.answer.toLowerCase().replace(/[.,!?/'`’"()]|the |and |& /gi,"").replace("-"," ");
 		const rightAnswer = answers[roundNumber][songNumber][which];
-		console.log(answer);
 		if (!right) {
 			if (Array.isArray(rightAnswer)) {
 				if (answer===rightAnswer[0].toLowerCase().replace(/[.,!?/'`’"()]|the |and |& /gi,"").replace("-"," ") || answer===rightAnswer[1].toLowerCase().replace(/[.,!?/'`’"()]|-|the |and |& /gi,"").replace("-"," ")) {

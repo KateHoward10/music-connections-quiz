@@ -1,11 +1,19 @@
-.App {
+
+header {
   padding: 4vw;
-  background-color: #fcfcfc;
+  background: linear-gradient(#011e4c, #324bd9 90%);
+  color: #fcfcfc;
+}
+
+.round {
+  padding: 4vw;
 }
 
 input {
   margin: 10px;
   font-size: 14px;
+  min-width: 200px;
+  background-color: #d1e6f9;
 }
 
 audio {
@@ -46,13 +54,13 @@ audio {
 
 .continue {
   float: right;
-  margin-top: 10px;
+  margin: 20px 0;
 }
 
 .markAnswers {
   float: right;
   background-color: #5dd0ea;
-  margin-top: 10px;
+  margin: 20px 0;
 }
 
 .songAnswer {
@@ -65,6 +73,7 @@ button {
   font-size: 15px;
   padding: 5px;
   border-radius: 5px;
+  box-shadow: 1px 2px #d1e6f9;
 }
 
 .interrobang {
@@ -112,8 +121,14 @@ button {
     margin-right: 3px;
   }
 
+  .song {
+    flex: 1;
+    align-items: center;
+  }
+
   .inputs {
     flex-direction: column;
+    flex: 1;
   }
 
   input {
