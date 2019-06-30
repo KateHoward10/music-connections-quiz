@@ -90,7 +90,10 @@ class Round extends Component {
 						{ songNumbers.map((songNumber, index) =>
 							<div className="question" key={index}>
 								<div className="song">
-									<Audio roundNumber={roundNumber} songNumber={songNumber} decreaseBonusPoints={decreaseBonusPoints}/>
+									<div className="audio-with-number">
+										<span className="song-number">{songNumber+1})</span>
+										<Audio roundNumber={roundNumber} songNumber={songNumber} decreaseBonusPoints={decreaseBonusPoints}/>
+									</div>
 									{ marked ? <div className="songAnswer">{answers[roundNumber][songNumber][0].length===2 ? answers[roundNumber][songNumber][0][0] : answers[roundNumber][songNumber][0] } — {answers[roundNumber][songNumber][1].length===2 ? answers[roundNumber][songNumber][1][0] : answers[roundNumber][songNumber][1] } </div> : null }
 								</div>
 								<div className={ marked ? "markedAnswers" : "inputs" }>

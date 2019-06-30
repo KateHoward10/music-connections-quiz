@@ -13,7 +13,14 @@ input {
   margin: 10px;
   font-size: 14px;
   min-width: 200px;
-  background-color: #d1e6f9;
+  padding: 5px;
+  border: none;
+  border-bottom: 2px solid #5dd0ea;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid #011e4c;
 }
 
 audio {
@@ -46,6 +53,17 @@ audio {
 .song {
   display: flex;
   flex-direction: column;
+}
+
+.audio-with-number {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.song-number {
+  color: #324bd9;
+  margin-right: 5px;
 }
 
 .total {
