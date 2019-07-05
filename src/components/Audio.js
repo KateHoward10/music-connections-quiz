@@ -12,14 +12,10 @@ function Audio(props) {
     }
   }
 
-  function reload() {
-    togglePlayed(false);
-  }
-
   return (
     <audio
       onPlay={play}
-      onLoadedData={reload}
+      onLoadedData={() => togglePlayed(false)}
       controls="controls"
       controlsList="nodownload"
       src={song}

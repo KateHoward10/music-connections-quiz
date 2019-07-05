@@ -21,21 +21,15 @@ function Input(props) {
 
   function check() {
     const rightAnswer = answers[roundNumber][songNumber][which];
-    if (!right) {
-      if (Array.isArray(rightAnswer)) {
-        if (
-          answer === formatAnswer(rightAnswer[0]) ||
-          answer === formatAnswer(rightAnswer[1])
-        ) {
-          toggleRight(true);
-          increaseScore(1);
-        }
-      } else {
-        if (answer === formatAnswer(rightAnswer)) {
-          toggleRight(true);
-          increaseScore(1);
-        }
-      }
+    if (
+      !right &&
+      ((Array.isArray(rightAnswer) &&
+        (answer === formatAnswer(rightAnswer[0]) ||
+          answer === formatAnswer(rightAnswer[1]))) ||
+        (!Array.isArray(rightAnswer) && answer === formatAnswer(rightAnswer)))
+    ) {
+      toggleRight(true);
+      increaseScore(1);
     }
   }
 

@@ -27,38 +27,25 @@ function Round(props) {
     }
   }
 
-  function setConnectionCorrect() {
-    increaseScore(bonusPoints);
-    toggleCorrect(true);
-  }
-
   function check() {
     const connection = answers[roundNumber][10][0];
     if (
-      roundNumber === 3 ||
-      roundNumber === 4 ||
-      roundNumber === 5 ||
-      roundNumber === 10 ||
-      roundNumber === 11 ||
-      roundNumber === 13
+      ((roundNumber === 3 ||
+        roundNumber === 4 ||
+        roundNumber === 5 ||
+        roundNumber === 10 ||
+        roundNumber === 11 ||
+        roundNumber === 13) &&
+        (guess.indexOf(connection[0]) > -1 ||
+          guess.indexOf(connection[1]) > -1)) ||
+      ((roundNumber === 6 || roundNumber === 7 || roundNumber === 14) &&
+        (guess.indexOf(connection[0]) > -1 &&
+          (guess.indexOf(connection[1]) > -1 ||
+            guess.indexOf(connection[2]) > -1))) ||
+      guess.indexOf(connection) > -1
     ) {
-      if (
-        guess.indexOf(connection[0]) > -1 ||
-        guess.indexOf(connection[1]) > -1
-      ) {
-        setConnectionCorrect();
-      }
-    } else if (roundNumber === 6 || roundNumber === 7 || roundNumber === 14) {
-      if (
-        guess.indexOf(connection[0]) > -1 &&
-        (guess.indexOf(connection[1]) > -1 || guess.indexOf(connection[2]) > -1)
-      ) {
-        setConnectionCorrect();
-      }
-    } else {
-      if (guess.indexOf(connection) > -1) {
-        setConnectionCorrect();
-      }
+      increaseScore(bonusPoints);
+      toggleCorrect(true);
     }
     toggleConnectionButton(false);
   }
