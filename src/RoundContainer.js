@@ -1,23 +1,30 @@
-import { connect } from 'react-redux';
-import Round from './components/Round';
-import { increaseRoundNumber, increaseScore, decreaseBonusPoints, resetBonusPoints } from './data/actions';
+import { connect } from "react-redux";
+import Round from "./components/Round";
+import {
+  increaseRoundNumber,
+  increaseScore,
+  decreaseBonusPoints,
+  resetBonusPoints
+} from "./data/actions";
 
 const mapStateToProps = state => {
-	return {
-		roundNumber: state.get("roundNumber"),
-		score: state.get("score"),
-		bonusPoints: state.get("bonusPoints"),
-		answers: state.get("answers"),
-	};
+  return {
+    roundNumber: state.roundNumber,
+    score: state.score,
+    bonusPoints: state.bonusPoints
+  };
 };
 
 const mapDispatchToProps = dispatch => {
-	return {
-		increaseRoundNumber: () => dispatch(increaseRoundNumber()),
-		increaseScore: (points) => dispatch(increaseScore(points)),
-		decreaseBonusPoints: () => dispatch(decreaseBonusPoints()),
-		resetBonusPoints: () => dispatch(resetBonusPoints()),
-	};
+  return {
+    increaseRoundNumber: () => dispatch(increaseRoundNumber()),
+    increaseScore: points => dispatch(increaseScore(points)),
+    decreaseBonusPoints: () => dispatch(decreaseBonusPoints()),
+    resetBonusPoints: () => dispatch(resetBonusPoints())
+  };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Round);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Round);
