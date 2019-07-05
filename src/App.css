@@ -72,16 +72,6 @@ audio {
   flex-wrap: wrap;
 }
 
-.continue {
-  float: right;
-  margin: 20px 0;
-}
-
-.markAnswers {
-  float: right;
-  margin: 20px 0;
-}
-
 .songAnswer {
   margin-left: 10px;
   margin-top: 5px;
@@ -109,6 +99,21 @@ button:hover {
   font-size: 30px;
   border-radius: 50%;
   background-color: #5dd0ea;
+}
+
+.continue {
+  float: right;
+  margin: 20px 0;
+}
+
+.markAnswers {
+  float: right;
+  margin: 20px 0;
+}
+
+.reset-button {
+  background-color: #324bd9;
+  color: #fff;
 }
 
 .end {

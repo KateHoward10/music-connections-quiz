@@ -111,8 +111,10 @@ class Round extends Component {
         ) : (
           <div>
             <div className="total">
-              <p>Total so far: {score} / 480</p>
-              <button onClick={resetGame}>Reset Game</button>
+              <p>Score: {score} / 480</p>
+              <button className="reset-button" onClick={resetGame}>
+                RESET GAME
+              </button>
             </div>
             <h2>Round {roundNumber + 1}</h2>
             {marked ? (
