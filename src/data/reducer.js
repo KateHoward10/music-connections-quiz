@@ -1,20 +1,39 @@
-
-const increaseRoundNumber = (state, action) => state.update("roundNumber", roundNumber => roundNumber+1);
-
-const increaseScore = (state, {points}) => state.update("score", score => score+points);
-
-const decreaseBonusPoints = (state, action) => state.update("bonusPoints", bonusPoints => bonusPoints-1);
-
-const resetBonusPoints = (state, action) => state.update("bonusPoints", bonusPoints => 11);
+const initialState = {
+  roundNumber: 0,
+  score: 0,
+  bonusPoints: 11
+};
 
 const reducer = (state, action) => {
-	switch (action.type) {
-		case "increaseRoundNumber": return increaseRoundNumber(state, action);
-		case "increaseScore": return increaseScore(state, action);
-		case "decreaseBonusPoints": return decreaseBonusPoints(state, action);
-		case "resetBonusPoints": return resetBonusPoints(state, action);
-		default: return state;
-	}
+  switch (action.type) {
+    case "increaseRoundNumber":
+      return {
+        ...state,
+        roundNumber: state.roundNumber + 1
+      };
+
+    case "increaseScore":
+      return {
+        ...state,
+        score: state.score + action.points
+      };
+
+    case "decreaseBonusPoints":
+      return {
+        ...state,
+        bonusPoints: state.bonusPoints - 1
+      };
+
+    case "resetBonusPoints":
+      return {
+        ...state,
+        bonusPoints: 11
+      };
+
+    case "resetGame":
+    default:
+      return initialState;
+  }
 };
 
 export default reducer;
