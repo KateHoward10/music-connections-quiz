@@ -82,7 +82,8 @@ class Round extends Component {
       score,
       bonusPoints,
       increaseScore,
-      decreaseBonusPoints
+      decreaseBonusPoints,
+      resetGame
     } = this.props;
     const { guess, connectionButton, correct, marked } = this.state;
     const progressLength = (roundNumber / 16) * 100;
@@ -109,9 +110,10 @@ class Round extends Component {
           </div>
         ) : (
           <div>
-            {marked ? (
-              <p className="total">Total so far: {score} / 480</p>
-            ) : null}
+            <div className="total">
+              <p>Total so far: {score} / 480</p>
+              <button onClick={resetGame}>Reset Game</button>
+            </div>
             <h2>Round {roundNumber + 1}</h2>
             {marked ? (
               <span>
@@ -120,23 +122,25 @@ class Round extends Component {
                   {correct ? "✔" : "✗"}{" "}
                 </span>
               </span>
-            ) : bonusPoints < 11 ? (
-              <div className="question">
-                <input
-                  type="text"
-                  className="connectionInput"
-                  onChange={this.update}
-                  placeholder="Connection"
-                />
-                {connectionButton ? (
-                  <button className="connectionButton" onClick={this.check}>
-                    Submit for a possible {bonusPoints} points
-                  </button>
-                ) : (
-                  <span>Thanks for guessing!</span>
-                )}
-              </div>
-            ) : null}
+            ) : (
+              bonusPoints < 11 && (
+                <div className="question">
+                  <input
+                    type="text"
+                    className="connectionInput"
+                    onChange={this.update}
+                    placeholder="Connection"
+                  />
+                  {connectionButton ? (
+                    <button className="connectionButton" onClick={this.check}>
+                      Submit for a possible {bonusPoints} points
+                    </button>
+                  ) : (
+                    <span>Thanks for guessing!</span>
+                  )}
+                </div>
+              )
+            )}
             {songNumbers.map((songNumber, index) => (
               <div className="question" key={index}>
                 <div className="song">

@@ -4,7 +4,8 @@ import {
   increaseRoundNumber,
   increaseScore,
   decreaseBonusPoints,
-  resetBonusPoints
+  resetBonusPoints,
+  resetGame
 } from "./data/actions";
 
 const mapStateToProps = state => {
@@ -20,7 +21,8 @@ const mapDispatchToProps = dispatch => {
     increaseRoundNumber: () => dispatch(increaseRoundNumber()),
     increaseScore: points => dispatch(increaseScore(points)),
     decreaseBonusPoints: () => dispatch(decreaseBonusPoints()),
-    resetBonusPoints: () => dispatch(resetBonusPoints())
+    resetBonusPoints: () => dispatch(resetBonusPoints()),
+    resetGame: () => dispatch(resetGame())
   };
 };
 
