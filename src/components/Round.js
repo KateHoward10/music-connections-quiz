@@ -83,7 +83,7 @@ function Round(props) {
       ) : (
         <div>
           <div className="total">
-            <p>Score: {score} / 480</p>
+            {marked && <p>Score so far: {score} / 480</p>}
             <button className="reset-button" onClick={resetGame}>
               RESET GAME
             </button>
