@@ -1,57 +1,70 @@
-import React, {Component} from 'react';
+import React, { useState, useEffect } from "react";
 
-class Input extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			answer: "",
-			right: false,
-		}
-		this.update = this.update.bind(this);
-		this.check = this.check.bind(this);
-	}
+function Input(props) {
+  const [answer, setAnswer] = useState("");
+  const [right, toggleRight] = useState(false);
+  const {
+    which,
+    answers,
+    songNumber,
+    roundNumber,
+    marked,
+    increaseScore
+  } = props;
 
-	update(e) {
-		this.setState ({ answer: e.target.value });
-	}
+  function formatAnswer(answer) {
+    return answer
+      .toLowerCase()
+      .replace(/[.,!?/'`’"()]|the |and |& /gi, "")
+      .replace("-", " ");
+  }
 
-	check() {
-		const { which, answers, songNumber, roundNumber } = this.props;
-		const { right } = this.state;
-		const answer = this.state.answer.toLowerCase().replace(/[.,!?/'`’"()]|the |and |& /gi,"").replace("-"," ");
-		const rightAnswer = answers[roundNumber][songNumber][which];
-		if (!right) {
-			if (Array.isArray(rightAnswer)) {
-				if (answer===rightAnswer[0].toLowerCase().replace(/[.,!?/'`’"()]|the |and |& /gi,"").replace("-"," ") || answer===rightAnswer[1].toLowerCase().replace(/[.,!?/'`’"()]|-|the |and |& /gi,"").replace("-"," ")) {
-					this.setState ({ right: true })
-					this.props.increaseScore(1);
-				}
-			} else {
-				if (answer===rightAnswer.toLowerCase().replace(/[.,!?/'`’"()]|the |and |& /gi,"").replace("-"," ")) {
-					this.setState ({ right: true })
-					this.props.increaseScore(1);
-				}
-			}
-		}
-	}
+  function check() {
+    const rightAnswer = answers[roundNumber][songNumber][which];
+    if (!right) {
+      if (Array.isArray(rightAnswer)) {
+        if (
+          answer === formatAnswer(rightAnswer[0]) ||
+          answer === formatAnswer(rightAnswer[1])
+        ) {
+          toggleRight(true);
+          increaseScore(1);
+        }
+      } else {
+        if (answer === formatAnswer(rightAnswer)) {
+          toggleRight(true);
+          increaseScore(1);
+        }
+      }
+    }
+  }
 
-	componentDidUpdate(prevProps) {
-		if (this.props.roundNumber!==prevProps.roundNumber) {
-			this.setState ({ answer: "", right: false });
-		}
-	}
+  useEffect(() => {
+    setAnswer("");
+    toggleRight(false);
+  }, [props.roundNumber]);
 
-	render() {
-		const { which, marked } = this.props;
-		const { answer, right } = this.state;
-		return (
-			<div>
-				{ marked ? <span className="individualAnswer"><i>{answer}</i><span style={{color: right ? 'green' : 'red'}}> { right ? "✔  " : "✗  " }</span></span>
-				: <input className="songInput" type="text" onChange={this.update} onBlur={this.check} placeholder={which==="0" ? "Song" : which==="1" ? "Artist" : "" }/>
-				}
-			</div>
-		)
-	}
-};
+  return (
+    <div>
+      {marked ? (
+        <span className="individualAnswer">
+          <i>{answer}</i>
+          <span style={{ color: right ? "green" : "red" }}>
+            {" "}
+            {right ? "✔  " : "✗  "}
+          </span>
+        </span>
+      ) : (
+        <input
+          className="songInput"
+          type="text"
+          onChange={e => setAnswer(formatAnswer(e.target.value))}
+          onBlur={check}
+          placeholder={which === "0" ? "Song" : which === "1" ? "Artist" : ""}
+        />
+      )}
+    </div>
+  );
+}
 
 export default Input;
