@@ -9,7 +9,7 @@ function Input(props) {
     songNumber,
     roundNumber,
     marked,
-    increaseScore
+    increaseRunningTotal
   } = props;
 
   function formatAnswer(answer) {
@@ -19,7 +19,7 @@ function Input(props) {
       .replace("-", " ");
   }
 
-  function check() {
+  function useRightAnswer() {
     const rightAnswer = answers[roundNumber][songNumber][which];
     if (
       !right &&
@@ -29,7 +29,7 @@ function Input(props) {
         (!Array.isArray(rightAnswer) && answer === formatAnswer(rightAnswer)))
     ) {
       toggleRight(true);
-      increaseScore(1);
+      increaseRunningTotal();
     }
   }
 
@@ -53,7 +53,7 @@ function Input(props) {
           className="songInput"
           type="text"
           onChange={e => setAnswer(formatAnswer(e.target.value))}
-          onBlur={check}
+          onBlur={useRightAnswer}
           placeholder={which === "0" ? "Song" : which === "1" ? "Artist" : ""}
         />
       )}

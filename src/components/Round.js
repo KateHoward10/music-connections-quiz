@@ -5,6 +5,7 @@ import answers from "../data/answers.js";
 
 function Round(props) {
   const [guess, setGuess] = useState("");
+  const [runningTotal, setRunningTotal] = useState(0);
   const [connectionButton, toggleConnectionButton] = useState(true);
   const [correct, toggleCorrect] = useState(false);
   const [marked, toggleMarked] = useState(false);
@@ -21,13 +22,13 @@ function Round(props) {
   const songNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   const progressLength = (roundNumber / 16) * 100;
 
-  function update(e) {
+  function useConnectionGuess(e) {
     if (connectionButton) {
       setGuess(e.target.value.toLowerCase());
     }
   }
 
-  function check() {
+  function useGuessCheck() {
     const connection = answers[roundNumber][10][0];
     if (
       ((roundNumber === 3 ||
@@ -48,6 +49,15 @@ function Round(props) {
       toggleCorrect(true);
     }
     toggleConnectionButton(false);
+  }
+
+  function increaseRunningTotal() {
+    setRunningTotal(runningTotal + 1);
+  }
+
+  function mark() {
+    increaseScore(runningTotal);
+    toggleMarked(true);
   }
 
   function continueGame() {
@@ -102,11 +112,11 @@ function Round(props) {
                 <input
                   type="text"
                   className="connectionInput"
-                  onChange={update}
+                  onChange={useConnectionGuess}
                   placeholder="Connection"
                 />
                 {connectionButton ? (
-                  <button className="connectionButton" onClick={check}>
+                  <button className="connectionButton" onClick={useGuessCheck}>
                     Submit for a possible {bonusPoints} points
                   </button>
                 ) : (
@@ -145,7 +155,7 @@ function Round(props) {
                   roundNumber={roundNumber}
                   songNumber={songNumber}
                   answers={answers}
-                  increaseScore={increaseScore}
+                  increaseRunningTotal={increaseRunningTotal}
                   marked={marked}
                 />
                 <Input
@@ -154,7 +164,7 @@ function Round(props) {
                   roundNumber={roundNumber}
                   songNumber={songNumber}
                   answers={answers}
-                  increaseScore={increaseScore}
+                  increaseRunningTotal={increaseRunningTotal}
                   marked={marked}
                 />
               </div>
@@ -165,7 +175,7 @@ function Round(props) {
               Continue >
             </button>
           ) : (
-            <button className="markAnswers" onClick={() => toggleMarked(true)}>
+            <button className="markAnswers" onClick={mark}>
               Mark Answers
             </button>
           )}
