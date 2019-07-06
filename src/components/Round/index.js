@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import Input from "./Input.js";
-import Audio from "./Audio.js";
-import answers from "../data/answers.js";
+import Song from "../Song";
+import Input from "../Input";
+import Button from "../Button";
+import answers from "../../data/answers.js";
+import { Container, ProgressContainer, ProgressLabel, End, Total, Mark } from "./styles";
 
 function Round(props) {
   const [guess, setGuess] = useState("");
@@ -70,8 +72,8 @@ function Round(props) {
   }
 
   return (
-    <div className="round">
-      <div className="progress">
+    <Container>
+      <ProgressContainer>
         <div
           style={{
             backgroundColor: "#279add",
@@ -79,46 +81,45 @@ function Round(props) {
             height: "10px"
           }}
         />
-      </div>
-      <p className="progress-label">{roundNumber}/16 rounds completed</p>
+      </ProgressContainer>
+      <ProgressLabel>{roundNumber}/16 rounds completed</ProgressLabel>
       {roundNumber === 16 ? (
-        <div className="end">
+        <End>
           <p>Congratulations, you have reached the end of the quiz!</p>
-          <p style={{ fontWeight: "bold" }}>Final score: {score} / 480</p>
+          <strong>Final score: {score} / 480</strong>
           <p>
             Sadly, there is no share functionality (yet), but feel free to send
             me a screenshot.
           </p>
-        </div>
+        </End>
       ) : (
         <div>
-          <div className="total">
+          <Total>
             {marked && <p>Score so far: {score} / 480</p>}
-            <button className="reset-button" onClick={resetGame}>
+            <Button type="reset" onClick={resetGame}>
               RESET GAME
-            </button>
-          </div>
+            </Button>
+          </Total>
           <h2>Round {roundNumber + 1}</h2>
           {marked ? (
             <span>
               Connection: {answers[roundNumber][10][1]} ... <em>{guess}</em>{" "}
-              <span style={{ color: correct ? "green" : "red" }}>
+              <Mark colour={ correct ? "green" : "red"}>
                 {correct ? "✔" : "✗"}{" "}
-              </span>
+              </Mark>
             </span>
           ) : (
             bonusPoints < 11 && (
               <div className="question">
-                <input
-                  type="text"
-                  className="connectionInput"
+                <Input
+                  connection
                   onChange={useConnectionGuess}
                   placeholder="Connection"
                 />
                 {connectionButton ? (
-                  <button className="connectionButton" onClick={useGuessCheck}>
+                  <Button onClick={useGuessCheck}>
                     Submit for a possible {bonusPoints} points
-                  </button>
+                  </Button>
                 ) : (
                   <span>Thanks for guessing!</span>
                 )}
@@ -126,62 +127,28 @@ function Round(props) {
             )
           )}
           {songNumbers.map((songNumber, index) => (
-            <div className="question" key={index}>
-              <div className="song">
-                <div className="audio-with-number">
-                  <span className="song-number">{songNumber + 1})</span>
-                  <Audio
-                    roundNumber={roundNumber}
-                    songNumber={songNumber}
-                    decreaseBonusPoints={decreaseBonusPoints}
-                  />
-                </div>
-                {marked ? (
-                  <div className="songAnswer">
-                    {answers[roundNumber][songNumber][0].length === 2
-                      ? answers[roundNumber][songNumber][0][0]
-                      : answers[roundNumber][songNumber][0]}{" "}
-                    —{" "}
-                    {answers[roundNumber][songNumber][1].length === 2
-                      ? answers[roundNumber][songNumber][1][0]
-                      : answers[roundNumber][songNumber][1]}{" "}
-                  </div>
-                ) : null}
-              </div>
-              <div className={marked ? "markedAnswers" : "inputs"}>
-                <Input
-                  placeholder="Song"
-                  which="0"
-                  roundNumber={roundNumber}
-                  songNumber={songNumber}
-                  answers={answers}
-                  increaseRunningTotal={increaseRunningTotal}
-                  marked={marked}
-                />
-                <Input
-                  placeholder="Artist"
-                  which="1"
-                  roundNumber={roundNumber}
-                  songNumber={songNumber}
-                  answers={answers}
-                  increaseRunningTotal={increaseRunningTotal}
-                  marked={marked}
-                />
-              </div>
-            </div>
+            <Song
+              key={index}
+              roundNumber={roundNumber}
+              songNumber={songNumber}
+              decreaseBonusPoints={decreaseBonusPoints}
+              answers={answers}
+              marked={marked}
+              increaseRunningTotal={increaseRunningTotal}
+            />
           ))}
           {marked ? (
-            <button className="continue" onClick={continueGame}>
+            <Button type="right" onClick={continueGame}>
               Continue >
-            </button>
+            </Button>
           ) : (
-            <button className="markAnswers" onClick={mark}>
+            <Button type="right" onClick={mark}>
               Mark Answers
-            </button>
+            </Button>
           )}
         </div>
       )}
-    </div>
+    </Container>
   );
 }
 

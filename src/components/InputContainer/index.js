@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import Input from "../Input";
+import { Answer, Mark } from "./styles";
 
-function Input(props) {
+function InputContainer(props) {
   const [answer, setAnswer] = useState("");
   const [right, toggleRight] = useState(false);
   const {
@@ -33,32 +35,30 @@ function Input(props) {
     }
   }
 
+  // Sets input value to empty when round number changes
   useEffect(() => {
     setAnswer("");
     toggleRight(false);
   }, [props.roundNumber]);
 
   return (
-    <div>
+    <React.Fragment>
       {marked ? (
-        <span className="individualAnswer">
+        <Answer>
           <i>{answer}</i>
-          <span style={{ color: right ? "green" : "red" }}>
-            {" "}
+          <Mark right={right}>
             {right ? "✔  " : "✗  "}
-          </span>
-        </span>
+          </Mark>
+        </Answer>
       ) : (
-        <input
-          className="songInput"
-          type="text"
+        <Input
           onChange={e => setAnswer(formatAnswer(e.target.value))}
           onBlur={useRightAnswer}
           placeholder={which === "0" ? "Song" : which === "1" ? "Artist" : ""}
         />
       )}
-    </div>
+    </React.Fragment>
   );
 }
 
-export default Input;
+export default InputContainer;
