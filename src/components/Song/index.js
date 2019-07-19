@@ -1,6 +1,17 @@
-import React, { useState } from "react";
-import { Question, SongContainer, AudioContainer, Audio, SongNumber, Button, SongAnswer, Inputs, ProgressContainer, ProgressBar } from "./styles";
-import InputContainer from "../InputContainer";
+import React, { useState } from 'react';
+import {
+  Question,
+  SongContainer,
+  AudioContainer,
+  Audio,
+  SongNumber,
+  Button,
+  SongAnswer,
+  Inputs,
+  ProgressContainer,
+  ProgressBar
+} from './styles';
+import InputContainer from '../InputContainer';
 
 function Song(props) {
   const [played, togglePlayed] = useState(false);
@@ -31,9 +42,7 @@ function Song(props) {
           <AudioContainer>
             <SongNumber>{songNumber + 1})</SongNumber>
             {playing ? (
-              <Button onClick={() => _audio.pause()}>
-                ❚❚
-              </Button>
+              <Button onClick={() => _audio.pause()}>❚❚</Button>
             ) : (
               <Button className="audio-button" onClick={play}>
                 ▶
@@ -42,7 +51,10 @@ function Song(props) {
             <Audio
               ref={c => (_audio = c)}
               // This stops songs thinking they've already been played when loading a new round
-              onLoadedData={() => togglePlayed(false)}
+              onLoadedData={() => {
+                togglePlayed(false);
+                setProgressLength(0);
+              }}
               onPause={() => togglePlaying(false)}
               onEnded={() => togglePlaying(false)}
               onTimeUpdate={useProgressLength}
@@ -53,15 +65,15 @@ function Song(props) {
             <SongAnswer>
               {answers[roundNumber][songNumber][0].length === 2
                 ? answers[roundNumber][songNumber][0][0]
-                : answers[roundNumber][songNumber][0]}{" "}
-              —{" "}
+                : answers[roundNumber][songNumber][0]}{' '}
+              —{' '}
               {answers[roundNumber][songNumber][1].length === 2
                 ? answers[roundNumber][songNumber][1][0]
-                : answers[roundNumber][songNumber][1]}{" "}
+                : answers[roundNumber][songNumber][1]}{' '}
             </SongAnswer>
           )}
         </SongContainer>
-        <Inputs type={marked ? "answers" : "inputs"}>
+        <Inputs type={marked ? 'answers' : 'inputs'}>
           <InputContainer
             placeholder="Song"
             which="0"
