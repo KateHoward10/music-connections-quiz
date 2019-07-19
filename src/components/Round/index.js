@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import Song from "../Song";
-import Input from "../Input";
-import Button from "../Button";
-import answers from "../../data/answers.js";
-import { Container, ProgressContainer, ProgressLabel, End, Total, Mark } from "./styles";
+import React, { useState } from 'react';
+import Song from '../Song';
+import Input from '../Input';
+import Button from '../Button';
+import answers from '../../data/answers.js';
+import { Container, ProgressContainer, ProgressLabel, End, Total, Mark } from './styles';
 
 function Round(props) {
-  const [guess, setGuess] = useState("");
+  const [guess, setGuess] = useState('');
   const [runningTotal, setRunningTotal] = useState(0);
   const [connectionButton, toggleConnectionButton] = useState(true);
   const [correct, toggleCorrect] = useState(false);
@@ -22,7 +22,7 @@ function Round(props) {
     resetGame
   } = props;
   const songNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const progressLength = (roundNumber / 16) * 100;
+  const progressLength = (roundNumber / 17) * 100;
 
   function useConnectionGuess(e) {
     if (connectionButton) {
@@ -39,12 +39,10 @@ function Round(props) {
         roundNumber === 10 ||
         roundNumber === 11 ||
         roundNumber === 13) &&
-        (guess.indexOf(connection[0]) > -1 ||
-          guess.indexOf(connection[1]) > -1)) ||
+        (guess.indexOf(connection[0]) > -1 || guess.indexOf(connection[1]) > -1)) ||
       ((roundNumber === 6 || roundNumber === 7 || roundNumber === 14) &&
         (guess.indexOf(connection[0]) > -1 &&
-          (guess.indexOf(connection[1]) > -1 ||
-            guess.indexOf(connection[2]) > -1))) ||
+          (guess.indexOf(connection[1]) > -1 || guess.indexOf(connection[2]) > -1))) ||
       guess.indexOf(connection) > -1
     ) {
       increaseScore(bonusPoints);
@@ -63,7 +61,7 @@ function Round(props) {
   }
 
   function continueGame() {
-    setGuess("");
+    setGuess('');
     toggleConnectionButton(true);
     toggleCorrect(false);
     toggleMarked(false);
@@ -74,23 +72,33 @@ function Round(props) {
   return (
     <Container>
       <ProgressContainer>
-        <div
-          style={{
-            backgroundColor: "#279add",
-            width: `${progressLength}%`,
-            height: "10px"
-          }}
-        />
+        {answers.map((round, index) => (
+          <div
+            key={index}
+            style={{
+              width: '16px',
+              height: '16px',
+              borderRadius: '8px',
+              backgroundColor: index < roundNumber || roundNumber === 16 ? '#279add' : 'lightgrey'
+            }}
+          />
+        ))}
       </ProgressContainer>
+      <div
+        style={{
+          backgroundColor: '#279add',
+          width: `${progressLength}%`,
+          height: '5px',
+          marginTop: '-5px',
+          zIndex: 10
+        }}
+      />
       <ProgressLabel>{roundNumber}/16 rounds completed</ProgressLabel>
       {roundNumber === 16 ? (
         <End>
           <p>Congratulations, you have reached the end of the quiz!</p>
           <strong>Final score: {score} / 480</strong>
-          <p>
-            Sadly, there is no share functionality (yet), but feel free to send
-            me a screenshot.
-          </p>
+          <p>Sadly, there is no share functionality (yet), but feel free to send me a screenshot.</p>
         </End>
       ) : (
         <div>
@@ -103,23 +111,15 @@ function Round(props) {
           <h2>Round {roundNumber + 1}</h2>
           {marked ? (
             <span>
-              Connection: {answers[roundNumber][10][1]} ... <em>{guess}</em>{" "}
-              <Mark colour={ correct ? "green" : "red"}>
-                {correct ? "✔" : "✗"}{" "}
-              </Mark>
+              Connection: {answers[roundNumber][10][1]} ... <em>{guess}</em>{' '}
+              <Mark colour={correct ? 'green' : 'red'}>{correct ? '✔' : '✗'} </Mark>
             </span>
           ) : (
             bonusPoints < 11 && (
               <div className="question">
-                <Input
-                  connection
-                  onChange={useConnectionGuess}
-                  placeholder="Connection"
-                />
+                <Input connection onChange={useConnectionGuess} placeholder="Connection" />
                 {connectionButton ? (
-                  <Button onClick={useGuessCheck}>
-                    Submit for a possible {bonusPoints} points
-                  </Button>
+                  <Button onClick={useGuessCheck}>Submit for a possible {bonusPoints} points</Button>
                 ) : (
                   <span>Thanks for guessing!</span>
                 )}

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 4vw;
@@ -6,14 +6,16 @@ export const Container = styled.div`
 
 export const ProgressContainer = styled.div`
   width: 100%;
-  height: 10px;
-  border-radius: 5px;
-  border: 1px solid grey;
+  height: 5px;
+  background-color: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 `;
 
 export const ProgressLabel = styled.p`
   font-size: 12px;
-  margin-top: 2px;
+  margin-top: 10px;
   margin-bottom: 0;
 `;
 
