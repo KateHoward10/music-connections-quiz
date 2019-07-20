@@ -41,13 +41,7 @@ function Song(props) {
         <SongContainer>
           <AudioContainer>
             <SongNumber>{songNumber + 1})</SongNumber>
-            {playing ? (
-              <Button onClick={() => _audio.pause()}>❚❚</Button>
-            ) : (
-              <Button className="audio-button" onClick={play}>
-                ▶
-              </Button>
-            )}
+            {playing ? <Button onClick={() => _audio.pause()}>❚❚</Button> : <Button onClick={play}>▶</Button>}
             <Audio
               ref={c => (_audio = c)}
               // This stops songs thinking they've already been played when loading a new round

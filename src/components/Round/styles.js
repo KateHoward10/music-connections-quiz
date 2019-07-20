@@ -6,11 +6,28 @@ export const Container = styled.div`
 
 export const ProgressContainer = styled.div`
   width: 100%;
-  height: 5px;
+  height: 4px;
+  border-radius: 2px;
   background-color: lightgrey;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+`;
+
+export const RoundIndicator = styled.div`
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: ${props => (props.active ? '#279add' : 'lightgrey')};
+`;
+
+export const Progress = styled.div`
+  background-color: #279add;
+  width: ${props => props.progressLength}%;
+  height: 4px;
+  border-radius: 2px;
+  margin-top: -4px;
+  z-index: 10;
 `;
 
 export const ProgressLabel = styled.p`

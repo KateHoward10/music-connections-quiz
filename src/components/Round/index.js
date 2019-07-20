@@ -3,7 +3,7 @@ import Song from '../Song';
 import Input from '../Input';
 import Button from '../Button';
 import answers from '../../data/answers.js';
-import { Container, ProgressContainer, ProgressLabel, End, Total, Mark } from './styles';
+import { Container, ProgressContainer, RoundIndicator, Progress, ProgressLabel, End, Total, Mark } from './styles';
 
 function Round(props) {
   const [guess, setGuess] = useState('');
@@ -22,7 +22,6 @@ function Round(props) {
     resetGame
   } = props;
   const songNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const progressLength = (roundNumber / 17) * 100;
 
   function useConnectionGuess(e) {
     if (connectionButton) {
@@ -73,26 +72,10 @@ function Round(props) {
     <Container>
       <ProgressContainer>
         {answers.map((round, index) => (
-          <div
-            key={index}
-            style={{
-              width: '16px',
-              height: '16px',
-              borderRadius: '8px',
-              backgroundColor: index < roundNumber || roundNumber === 16 ? '#279add' : 'lightgrey'
-            }}
-          />
+          <RoundIndicator key={index} active={index < roundNumber || roundNumber === 16} />
         ))}
       </ProgressContainer>
-      <div
-        style={{
-          backgroundColor: '#279add',
-          width: `${progressLength}%`,
-          height: '5px',
-          marginTop: '-5px',
-          zIndex: 10
-        }}
-      />
+      <Progress progressLength={(roundNumber / 17) * 100} />
       <ProgressLabel>{roundNumber}/16 rounds completed</ProgressLabel>
       {roundNumber === 16 ? (
         <End>
