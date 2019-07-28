@@ -95,7 +95,7 @@ function Round(props) {
           {marked ? (
             <span>
               Connection: {answers[roundNumber][10][1]} ... <em>{guess}</em>{' '}
-              <Mark colour={correct ? 'green' : 'red'}>{correct ? '✔' : '✗'} </Mark>
+              <Mark color={correct ? 'green' : 'red'}>{correct ? '✔' : '✗'} </Mark>
             </span>
           ) : (
             bonusPoints < 11 && (
