@@ -44,10 +44,11 @@ function Song(props) {
             {playing ? <Button onClick={() => _audio.pause()}>❚❚</Button> : <Button onClick={play}>▶</Button>}
             <Audio
               ref={c => (_audio = c)}
-              // This stops songs thinking they've already been played when loading a new round
+              // This stops songs thinking they've already been played (or are still playing) when loading a new round
               onLoadedData={() => {
-                togglePlayed(false);
                 setProgressLength(0);
+                togglePlayed(false);
+                togglePlaying(false);
               }}
               onPause={() => togglePlaying(false)}
               onEnded={() => togglePlaying(false)}
