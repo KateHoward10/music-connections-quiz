@@ -25,7 +25,7 @@ function InputContainer(props) {
         (!Array.isArray(rightAnswer) && formatAnswer(answer) === formatAnswer(rightAnswer)))
     ) {
       toggleRight(true);
-      increaseRunningTotal();
+      increaseRunningTotal(1);
     }
   }
 
@@ -33,7 +33,7 @@ function InputContainer(props) {
   useEffect(() => {
     setAnswer('');
     toggleRight(false);
-  }, [props.roundNumber]);
+  }, [roundNumber]);
 
   return (
     <React.Fragment>

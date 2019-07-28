@@ -44,14 +44,14 @@ function Round(props) {
           (guess.indexOf(connection[1]) > -1 || guess.indexOf(connection[2]) > -1))) ||
       guess.indexOf(connection) > -1
     ) {
-      increaseScore(bonusPoints);
+      increaseRunningTotal(bonusPoints);
       toggleCorrect(true);
     }
     toggleConnectionButton(false);
   }
 
-  function increaseRunningTotal() {
-    setRunningTotal(runningTotal + 1);
+  function increaseRunningTotal(points) {
+    setRunningTotal(runningTotal + points);
   }
 
   function mark() {
@@ -61,11 +61,22 @@ function Round(props) {
 
   function continueGame() {
     setGuess('');
+    setRunningTotal(0);
     toggleConnectionButton(true);
     toggleCorrect(false);
     toggleMarked(false);
     increaseRoundNumber();
     resetBonusPoints();
+  }
+
+  function reset() {
+    setGuess('');
+    setRunningTotal(0);
+    toggleConnectionButton(false);
+    toggleCorrect(false);
+    toggleMarked(false);
+    resetBonusPoints();
+    resetGame();
   }
 
   return (
@@ -79,7 +90,7 @@ function Round(props) {
       <ProgressLabel>{roundNumber}/16 rounds completed</ProgressLabel>
       <Total>
         {marked && <p>Score so far: {score} / 480</p>}
-        <Button type="reset" onClick={resetGame}>
+        <Button type="reset" onClick={reset}>
           RESET GAME
         </Button>
       </Total>
