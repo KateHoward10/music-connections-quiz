@@ -1,16 +1,21 @@
-import React, { useState } from "react";
-import { StyledInput } from "./styles";
+import React, { useState } from 'react';
+import { StyledInput } from './styles';
 
-function Input(props) {
+function Input({ onChange, onBlur, placeholder, connection }) {
   const [inFocus, toggleFocus] = useState(false);
 
   return (
     <StyledInput
       type="text"
+      onChange={onChange}
       onFocus={() => toggleFocus(true)}
-      onBlur={() =>toggleFocus(false)}
+      onBlur={() => {
+        if (onBlur) onBlur();
+        toggleFocus(false);
+      }}
       inFocus={inFocus}
-      {...props}
+      placeholder={placeholder}
+      connection={connection}
     />
   );
 }

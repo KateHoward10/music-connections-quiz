@@ -51,5 +51,5 @@ export const Total = styled.div`
 `;
 
 export const Mark = styled.span`
-  color: ${props => props.colour};
+  color: ${props => (props.correct ? 'green' : 'red')};
 `;

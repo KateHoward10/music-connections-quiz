@@ -1,13 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Question = styled.div`
   margin-top: 20px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   @media screen and (max-width: 700px) {
-    align-items: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 `;
 
@@ -45,11 +43,9 @@ export const Inputs = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
-  align-items: ${props => props.type==="inputs" ? "center" : "flex-start"};
-  margin-bottom: ${props => props.type==="answers" ? "20px" : 0};
+  align-items: ${props => (props.type === 'inputs' ? 'center' : 'flex-start')};
   @media screen and (max-width: 700px) {
     flex-direction: column;
-    flex: 1;
     align-items: flex-start;
   }
 `;

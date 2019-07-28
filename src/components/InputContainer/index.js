@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Input from '../Input';
-import { Answer, Mark } from './styles';
+import { Container, Answer, Mark } from './styles';
 
 function InputContainer(props) {
   const [answer, setAnswer] = useState('');
@@ -36,7 +36,7 @@ function InputContainer(props) {
   }, [roundNumber]);
 
   return (
-    <React.Fragment>
+    <Container>
       {marked ? (
         <Answer>
           <i>{answer}</i>
@@ -49,7 +49,7 @@ function InputContainer(props) {
           placeholder={which === '0' ? 'Song' : which === '1' ? 'Artist' : ''}
         />
       )}
-    </React.Fragment>
+    </Container>
   );
 }
 
