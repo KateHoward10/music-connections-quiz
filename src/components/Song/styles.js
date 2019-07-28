@@ -5,6 +5,10 @@ export const Question = styled.div`
   display: flex;
   align-items: center;
   @media screen and (max-width: 700px) {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  @media screen and (max-width: 500px) {
     flex-direction: column;
   }
 `;
@@ -44,7 +48,8 @@ export const Inputs = styled.div`
   flex-direction: row;
   flex: 1;
   align-items: ${props => (props.type === 'inputs' ? 'center' : 'flex-start')};
-  @media screen and (max-width: 700px) {
+  margin-bottom: ${props => (props.type === 'answers' ? '20px' : 0)};
+  @media screen and (max-width: 500px) {
     flex-direction: column;
     align-items: flex-start;
   }

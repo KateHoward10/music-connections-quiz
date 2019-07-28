@@ -22,10 +22,11 @@ export const StyledInput = styled.input`
 `;
 
 export const Answer = styled.p`
-  margin: 0 20px;
+  margin-right: 20px;
   @media screen and (max-width: 700px) {
     align-self: flex-start;
     margin-left: 10px;
+    margin-bottom: 10px;
   }
 `;
 
