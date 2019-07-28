@@ -77,6 +77,12 @@ function Round(props) {
       </ProgressContainer>
       <Progress progressLength={(roundNumber / 17) * 100} />
       <ProgressLabel>{roundNumber}/16 rounds completed</ProgressLabel>
+      <Total>
+        {marked && <p>Score so far: {score} / 480</p>}
+        <Button type="reset" onClick={resetGame}>
+          RESET GAME
+        </Button>
+      </Total>
       {roundNumber === 16 ? (
         <End>
           <p>Congratulations, you have reached the end of the quiz!</p>
@@ -85,12 +91,6 @@ function Round(props) {
         </End>
       ) : (
         <div>
-          <Total>
-            {marked && <p>Score so far: {score} / 480</p>}
-            <Button type="reset" onClick={resetGame}>
-              RESET GAME
-            </Button>
-          </Total>
           <h2>Round {roundNumber + 1}</h2>
           {marked ? (
             <span>
