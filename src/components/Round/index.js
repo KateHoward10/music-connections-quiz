@@ -70,13 +70,9 @@ function Round(props) {
   }
 
   function reset() {
-    setGuess('');
-    setRunningTotal(0);
-    toggleConnectionButton(false);
-    toggleCorrect(false);
-    toggleMarked(false);
     resetBonusPoints();
     resetGame();
+    window.location.reload();
   }
 
   return (
