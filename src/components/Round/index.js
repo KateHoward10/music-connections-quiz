@@ -57,6 +57,7 @@ function Round(props) {
   function mark() {
     increaseScore(runningTotal);
     toggleMarked(true);
+    window.scroll(0, 0);
   }
 
   function continueGame() {
@@ -67,6 +68,7 @@ function Round(props) {
     toggleMarked(false);
     increaseRoundNumber();
     resetBonusPoints();
+    window.scroll(0, 0);
   }
 
   function reset() {
