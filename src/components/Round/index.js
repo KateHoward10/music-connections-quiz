@@ -70,9 +70,13 @@ function Round(props) {
   }
 
   function reset() {
+    setGuess('');
+    setRunningTotal(0);
+    toggleConnectionButton(false);
+    toggleCorrect(false);
+    toggleMarked(false);
     resetBonusPoints();
     resetGame();
-    window.location.reload();
   }
 
   return (
@@ -86,7 +90,13 @@ function Round(props) {
       <ProgressLabel>{roundNumber}/16 rounds completed</ProgressLabel>
       <Total>
         {marked && <p>Score so far: {score} / 480</p>}
-        <Button type="reset" onClick={reset}>
+        <Button
+          type="reset"
+          onClick={() => {
+            reset();
+            window.location.reload();
+          }}
+        >
           RESET GAME
         </Button>
       </Total>
