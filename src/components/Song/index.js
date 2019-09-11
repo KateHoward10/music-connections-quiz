@@ -32,7 +32,9 @@ function Song(props) {
 
   function useProgressLength() {
     const { duration, currentTime } = _audio;
-    setProgressLength((currentTime / duration) * 100);
+    if (duration && currentTime) {
+      setProgressLength((currentTime / duration) * 100);
+    }
   }
 
   return (
