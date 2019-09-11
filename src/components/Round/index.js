@@ -82,7 +82,7 @@ function Round(props) {
           <RoundIndicator key={index} active={index < roundNumber || roundNumber === 16} />
         ))}
       </ProgressContainer>
-      <Progress progressLength={(roundNumber / 17) * 100} />
+      <Progress progressLength={(roundNumber / 15) * 100} />
       <ProgressLabel>{roundNumber}/16 rounds completed</ProgressLabel>
       <Total>
         {marked && <p>Score so far: {score} / 480</p>}

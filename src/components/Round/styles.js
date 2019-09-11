@@ -11,7 +11,7 @@ export const ProgressContainer = styled.div`
   background-color: lightgrey;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 `;
 
 export const RoundIndicator = styled.div`
