@@ -31,19 +31,17 @@ function Round(props) {
 
   function useGuessCheck() {
     const connection = answers[roundNumber][10][0];
-    if (
-      ((roundNumber === 3 ||
-        roundNumber === 4 ||
-        roundNumber === 5 ||
-        roundNumber === 10 ||
-        roundNumber === 11 ||
-        roundNumber === 13) &&
-        (guess.indexOf(connection[0]) > -1 || guess.indexOf(connection[1]) > -1)) ||
-      ((roundNumber === 6 || roundNumber === 7 || roundNumber === 14) &&
-        (guess.indexOf(connection[0]) > -1 &&
-          (guess.indexOf(connection[1]) > -1 || guess.indexOf(connection[2]) > -1))) ||
-      guess.indexOf(connection) > -1
-    ) {
+    function connectionGuessCorrect() {
+      if (roundNumber === 6 || roundNumber === 7 || roundNumber === 14) {
+        return (
+          guess.indexOf(connection[0]) > -1 && (guess.indexOf(connection[1]) > -1 || guess.indexOf(connection[2]) > -1)
+        );
+      } else {
+        return connection.some(option => guess.indexOf(option) > -1);
+      }
+    }
+
+    if (connectionGuessCorrect()) {
       increaseRunningTotal(bonusPoints);
       toggleCorrect(true);
     }
