@@ -71,8 +71,11 @@ export const ProgressContainer = styled.div`
   border: 1px solid lightgrey;
 `;
 
-export const ProgressBar = styled.div`
+export const ProgressBar = styled.div.attrs(props => ({
+  style: {
+    width: `${props.width}%`
+  }
+}))`
   background-color: #324bd9;
   height: 3px;
-  width: ${props => props.width}%;
 `;
