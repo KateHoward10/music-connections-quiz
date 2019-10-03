@@ -1,7 +1,12 @@
 # Kate’s Music Intros Connections Quiz
 
 ## What's this then?
+
 I hosted a music intros quiz night once where each round had a connection, which was worth more points if worked out earlier on. This is a digital version of that quiz, with much less cheating and shouting.
+
+## Play the game
+
+Hosted [here](https://katehoward10.github.io/music-connections-quiz)
 
 ![Round 1 in action](Screenshot.png)
 
