@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 4vw;
+  max-width: 720px;
+  padding: 3vw;
+  margin: auto;
 `;
 
 export const ProgressContainer = styled.div`
