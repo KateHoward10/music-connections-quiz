@@ -6,6 +6,9 @@ export const Container = styled.div`
 `;
 
 export const StyledInput = styled.input`
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   margin: 10px;
   font-size: 14px;
   min-width: 200px;
@@ -32,5 +35,4 @@ export const Answer = styled.p`
 
 export const Mark = styled.span`
   margin-left: 5px;
-  color: ${props => (props.right ? 'green' : 'red')};
 `;

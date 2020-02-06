@@ -3,7 +3,8 @@ import Song from '../Song';
 import Input from '../Input';
 import Button from '../Button';
 import answers from '../../data/answers.js';
-import { Container, ProgressContainer, RoundIndicator, Progress, ProgressLabel, End, Total, Mark } from './styles';
+import { Container, ProgressContainer, RoundIndicator, Progress, ProgressLabel, End, Total } from './styles';
+import { FaUndo, FaCheck, FaTimes, FaChevronRight } from 'react-icons/fa';
 
 function Round(props) {
   const [guess, setGuess] = useState('');
@@ -97,7 +98,8 @@ function Round(props) {
             window.location.reload();
           }}
         >
-          RESET GAME
+          <FaUndo />
+          <span>RESET GAME</span>
         </Button>
       </Total>
       {roundNumber === 16 ? (
@@ -112,7 +114,7 @@ function Round(props) {
           {marked ? (
             <span>
               Connection: {answers[roundNumber][10][1]} ... <em>{guess}</em>{' '}
-              <Mark correct={correct}>{correct ? '✔' : '✗'} </Mark>
+              <span>{correct ? <FaCheck color="green" /> : <FaTimes color="red" />} </span>
             </span>
           ) : (
             bonusPoints < 11 && (
@@ -139,7 +141,8 @@ function Round(props) {
           ))}
           {marked ? (
             <Button type="right" onClick={continueGame}>
-              Continue >
+              <span>Continue</span>
+              <FaChevronRight />
             </Button>
           ) : (
             <Button type="right" onClick={mark}>

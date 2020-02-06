@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Input from '../Input';
 import { Container, Answer, Mark } from './styles';
+import { FaCheck, FaTimes } from 'react-icons/fa';
 
 function InputContainer(props) {
   const [answer, setAnswer] = useState('');
@@ -40,7 +41,7 @@ function InputContainer(props) {
       {marked ? (
         <Answer>
           <i>{answer}</i>
-          <Mark right={right}>{right ? '✔  ' : '✗  '}</Mark>
+          <Mark>{right ? <FaCheck color="green" /> : <FaTimes color="red" />}</Mark>
         </Answer>
       ) : (
         <Input

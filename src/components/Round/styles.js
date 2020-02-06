@@ -51,7 +51,3 @@ export const Total = styled.div`
   justify-content: flex-end;
   flex-wrap: wrap;
 `;
-
-export const Mark = styled.span`
-  color: ${props => (props.correct ? 'green' : 'red')};
-`;

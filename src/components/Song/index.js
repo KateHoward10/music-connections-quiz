@@ -12,6 +12,7 @@ import {
   ProgressBar
 } from './styles';
 import InputContainer from '../InputContainer';
+import { FaPlay, FaPause } from 'react-icons/fa';
 
 function Song(props) {
   const [played, togglePlayed] = useState(false);
@@ -43,7 +44,15 @@ function Song(props) {
         <SongContainer>
           <AudioContainer>
             <SongNumber>{songNumber + 1})</SongNumber>
-            {playing ? <Button onClick={() => _audio.pause()}>❚❚</Button> : <Button onClick={play}>▶</Button>}
+            {playing ? (
+              <Button onClick={() => _audio.pause()}>
+                <FaPause />
+              </Button>
+            ) : (
+              <Button onClick={play}>
+                <FaPlay />
+              </Button>
+            )}
             <Audio
               ref={c => (_audio = c)}
               // This stops songs thinking they've already been played (or are still playing) when loading a new round

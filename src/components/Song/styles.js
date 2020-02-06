@@ -65,7 +65,8 @@ export const Button = styled.button`
   justify-content: center;
   background-color: #324bd9;
   color: #fff;
-  font-size: 20px;
+  font-size: 16px;
+  padding: 0;
 `;
 
 export const ProgressContainer = styled.div`
