@@ -9,7 +9,7 @@ export const StyledInput = styled.input`
   min-width: 200px;
   padding: 5px;
   border: none;
-  border-radius: none;
+  border-radius: 0;
   flex: 0.5;
   outline: none;
   border-bottom: 2px solid ${props => (props.inFocus ? '#011e4c' : '#5dd0ea')}

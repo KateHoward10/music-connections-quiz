@@ -30,7 +30,8 @@ function Round(props) {
     }
   }
 
-  function useGuessCheck() {
+  function useGuessCheck(e) {
+    e.preventDefault();
     const connection = answers[roundNumber][10][0];
     function connectionGuessCorrect() {
       if (roundNumber === 6 || roundNumber === 7 || roundNumber === 14) {
@@ -118,14 +119,14 @@ function Round(props) {
             </span>
           ) : (
             bonusPoints < 11 && (
-              <div className="question">
+              <form onSubmit={useGuessCheck} className="connection-form">
                 <Input connection onChange={useConnectionGuess} placeholder="Connection" />
                 {connectionButton ? (
-                  <Button onClick={useGuessCheck}>Submit for a possible {bonusPoints} points</Button>
+                  <Button type="submit">Submit for a possible {bonusPoints} points</Button>
                 ) : (
                   <span>Thanks for guessing!</span>
                 )}
-              </div>
+              </form>
             )
           )}
           {songNumbers.map((songNumber, index) => (
