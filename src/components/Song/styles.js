@@ -58,28 +58,37 @@ export const Inputs = styled.div`
 export const Button = styled.button`
   width: 40px;
   height: 40px;
-  border-radius: 20px;
+  border-radius: 50%;
   margin-right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #324bd9;
+  background-color: #5dd0ea;
   color: #fff;
   font-size: 16px;
   padding: 0;
+  border: 0;
+  z-index: 100;
+  position: absolute;
+  top: 5px;
+  left: 5px;
 `;
 
 export const ProgressContainer = styled.div`
-  width: 100%;
-  height: 3px;
-  border: 1px solid lightgrey;
+  width: 50px;
+  height: 50px;
+  position: relative;
 `;
 
-export const ProgressBar = styled.div.attrs(props => ({
-  style: {
-    width: `${props.width}%`
-  }
-}))`
-  background-color: #324bd9;
-  height: 3px;
+export const CircleContainer = styled.svg`
+  transform: rotate(-90deg);
 `;
+
+export const ProgressBar = styled.circle(
+  ({ circumference, progressLength }) => `
+  stroke-width: 4px;
+  stroke-dasharray: ${circumference} ${circumference};
+  stroke-dashoffset: ${circumference - (progressLength / 100) * circumference};
+  transition: stroke-dashoffset 0.35s;
+`
+);

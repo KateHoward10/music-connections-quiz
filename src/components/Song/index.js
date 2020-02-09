@@ -9,6 +9,7 @@ import {
   SongAnswer,
   Inputs,
   ProgressContainer,
+  CircleContainer,
   ProgressBar
 } from './styles';
 import InputContainer from '../InputContainer';
@@ -44,15 +45,29 @@ function Song(props) {
         <SongContainer>
           <AudioContainer>
             <SongNumber>{songNumber + 1})</SongNumber>
-            {playing ? (
-              <Button onClick={() => _audio.pause()}>
-                <FaPause />
-              </Button>
-            ) : (
-              <Button onClick={play}>
-                <FaPlay />
-              </Button>
-            )}
+            <ProgressContainer>
+              <CircleContainer width="50" height="50">
+                <ProgressBar
+                  stroke-width="4"
+                  fill="transparent"
+                  stroke="#324bd9"
+                  r="22"
+                  cx="25"
+                  cy="25"
+                  progressLength={progressLength}
+                  circumference={48 * Math.PI}
+                />
+              </CircleContainer>
+              {playing ? (
+                <Button onClick={() => _audio.pause()}>
+                  <FaPause />
+                </Button>
+              ) : (
+                <Button onClick={play}>
+                  <FaPlay />
+                </Button>
+              )}
+            </ProgressContainer>
             <Audio
               ref={c => (_audio = c)}
               // This stops songs thinking they've already been played (or are still playing) when loading a new round
@@ -100,9 +115,6 @@ function Song(props) {
           />
         </Inputs>
       </Question>
-      <ProgressContainer>
-        <ProgressBar width={progressLength} />
-      </ProgressContainer>
     </React.Fragment>
   );
 }
