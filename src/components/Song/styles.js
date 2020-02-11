@@ -45,13 +45,13 @@ export const SongAnswer = styled.div`
 
 export const Inputs = styled.div`
   display: flex;
-  flex-direction: row;
-  flex: 1;
-  align-items: ${props => (props.type === 'inputs' ? 'center' : 'flex-start')};
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
   margin-bottom: ${props => (props.type === 'answers' ? '20px' : 0)};
-  @media screen and (max-width: 500px) {
-    flex-direction: column;
-    align-items: flex-start;
+  @media screen and (min-width: 500px) {
+    flex-direction: row;
+    align-items: ${props => (props.type === 'inputs' ? 'center' : 'flex-start')};
   }
 `;
 
