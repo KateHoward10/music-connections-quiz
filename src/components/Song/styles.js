@@ -77,18 +77,20 @@ export const Button = styled.button`
 export const ProgressContainer = styled.div`
   width: 50px;
   height: 50px;
+  border-radius: 50%;
   position: relative;
+  background: lightgrey;
 `;
 
 export const CircleContainer = styled.svg`
   transform: rotate(-90deg);
 `;
 
-export const ProgressBar = styled.circle(
-  ({ circumference, progressLength }) => `
-  stroke-width: 4px;
-  stroke-dasharray: ${circumference} ${circumference};
-  stroke-dashoffset: ${circumference - (progressLength / 100) * circumference};
+export const ProgressBar = styled.circle.attrs(({ circumference, progressLength }) => ({
+  strokeDasharray: `${circumference} ${circumference}`,
+  strokeDashoffset: `${circumference - (progressLength / 100) * circumference}`
+}))`
+  stroke-width: 5px;
+  stroke-linecap: round;
   transition: stroke-dashoffset 0.35s;
-`
-);
+`;

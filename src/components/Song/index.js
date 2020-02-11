@@ -48,7 +48,6 @@ function Song(props) {
             <ProgressContainer>
               <CircleContainer width="50" height="50">
                 <ProgressBar
-                  stroke-width="4"
                   fill="transparent"
                   stroke="#324bd9"
                   r="22"
