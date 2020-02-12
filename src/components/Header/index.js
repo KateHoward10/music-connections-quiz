@@ -17,12 +17,12 @@ const Header = React.forwardRef((props, ref) => {
         ‽
       </Button>
       <p>
-        In each header there are ten points available for the artists, ten points for the songs, and up to ten bonus
+        In each round there are ten points available for the artists, ten points for the songs, and up to ten bonus
         points for the connection, depending on how soon you get it.
       </p>
       <p>
-        Each connection also applies to the first song of the next header, which can be thought of as a reject from the
-        previous header.
+        Each connection also applies to the first song of the next round, which can be thought of as a reject from the
+        previous round.
       </p>
       <p>Play any song to start!</p>
     </StyledHeader>
