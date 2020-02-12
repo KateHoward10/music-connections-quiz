@@ -9,7 +9,7 @@ export const StyledButton = styled.button`
   justify-content: center;
   font-size: 15px;
   padding: 5px;
-  margin: 5px;
+  margin: 5px 0;
   border-radius: 5px;
   border: 1px solid ${props => (props.hovered ? 'grey' : 'transparent')};
   background-color: #5dd0ea;
