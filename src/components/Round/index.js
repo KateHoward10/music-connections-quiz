@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import ConnectionForm from '../ConnectionForm';
 import Song from '../Song';
-import Input from '../Input';
 import Button from '../Button';
 import answers from '../../data/answers.js';
 import { Container, ProgressContainer, RoundIndicator, Progress, ProgressLabel, End, Total } from './styles';
@@ -20,7 +20,8 @@ function Round(props) {
     increaseRoundNumber,
     decreaseBonusPoints,
     resetBonusPoints,
-    resetGame
+    resetGame,
+    scrolled
   } = props;
   const songNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -119,14 +120,13 @@ function Round(props) {
             </span>
           ) : (
             bonusPoints < 11 && (
-              <form onSubmit={useGuessCheck} className="connection-form">
-                <Input connection onChange={useConnectionGuess} placeholder="Connection" />
-                {connectionButton ? (
-                  <Button type="submit">Submit for a possible {bonusPoints} points</Button>
-                ) : (
-                  <span>Thanks for guessing!</span>
-                )}
-              </form>
+              <ConnectionForm
+                onSubmit={useGuessCheck}
+                onChange={useConnectionGuess}
+                buttonVisible={connectionButton}
+                bonusPoints={bonusPoints}
+                scrolled={scrolled}
+              />
             )
           )}
           {songNumbers.map((songNumber, index) => (

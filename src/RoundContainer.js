@@ -1,18 +1,13 @@
-import { connect } from "react-redux";
-import Round from "./components/Round";
-import {
-  increaseRoundNumber,
-  increaseScore,
-  decreaseBonusPoints,
-  resetBonusPoints,
-  resetGame
-} from "./data/actions";
+import { connect } from 'react-redux';
+import Round from './components/Round';
+import { increaseRoundNumber, increaseScore, decreaseBonusPoints, resetBonusPoints, resetGame } from './data/actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
     roundNumber: state.roundNumber,
     score: state.score,
-    bonusPoints: state.bonusPoints
+    bonusPoints: state.bonusPoints,
+    scrolled: ownProps.scrolled
   };
 };
 
