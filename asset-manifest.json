@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/music-connections-quiz/static/css/main.a2b7b0b6.chunk.css",
+    "main.js": "/music-connections-quiz/static/js/main.cf8810fc.chunk.js",
+    "main.js.map": "/music-connections-quiz/static/js/main.cf8810fc.chunk.js.map",
+    "runtime-main.js": "/music-connections-quiz/static/js/runtime-main.d9bd0d46.js",
+    "runtime-main.js.map": "/music-connections-quiz/static/js/runtime-main.d9bd0d46.js.map",
+    "static/js/2.fbcb3290.chunk.js": "/music-connections-quiz/static/js/2.fbcb3290.chunk.js",
+    "static/js/2.fbcb3290.chunk.js.map": "/music-connections-quiz/static/js/2.fbcb3290.chunk.js.map",
+    "index.html": "/music-connections-quiz/index.html",
+    "precache-manifest.b5a682bcde646d795f847294094f65b7.js": "/music-connections-quiz/precache-manifest.b5a682bcde646d795f847294094f65b7.js",
+    "service-worker.js": "/music-connections-quiz/service-worker.js",
+    "static/css/main.a2b7b0b6.chunk.css.map": "/music-connections-quiz/static/css/main.a2b7b0b6.chunk.css.map",
+    "static/js/2.fbcb3290.chunk.js.LICENSE.txt": "/music-connections-quiz/static/js/2.fbcb3290.chunk.js.LICENSE.txt",
+    "static/media/0.mp3": "/music-connections-quiz/static/media/0.e8b5636d.mp3",
+    "static/media/1.mp3": "/music-connections-quiz/static/media/1.de1d0063.mp3",
+    "static/media/2.mp3": "/music-connections-quiz/static/media/2.de15114d.mp3",
+    "static/media/3.mp3": "/music-connections-quiz/static/media/3.fa49be54.mp3",
+    "static/media/4.mp3": "/music-connections-quiz/static/media/4.f0aa0c6e.mp3",
+    "static/media/5.mp3": "/music-connections-quiz/static/media/5.eab56859.mp3",
+    "static/media/6.mp3": "/music-connections-quiz/static/media/6.f4481c4a.mp3",
+    "static/media/7.mp3": "/music-connections-quiz/static/media/7.fd774fa5.mp3",
+    "static/media/8.mp3": "/music-connections-quiz/static/media/8.fba536a7.mp3",
+    "static/media/9.mp3": "/music-connections-quiz/static/media/9.ecd9e809.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d9bd0d46.js",
+    "static/js/2.fbcb3290.chunk.js",
+    "static/css/main.a2b7b0b6.chunk.css",
+    "static/js/main.cf8810fc.chunk.js"
+  ]
+}
