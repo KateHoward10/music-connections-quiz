@@ -72,6 +72,8 @@ export const Button = styled.button`
   position: absolute;
   top: 5px;
   left: 5px;
+  outline: none;
+  cursor: pointer;
 `;
 
 export const ProgressContainer = styled.div`

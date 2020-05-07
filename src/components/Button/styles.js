@@ -4,6 +4,7 @@ export const StyledButton = styled.button`
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  outline: none;
   display: flex;
   align-items: center;
   justify-content: center;
