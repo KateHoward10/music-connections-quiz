@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ef873b8aebe15d9764a82e0076e94b2d",
+    "revision": "cc3803d4aee5370cbddbb5e605498fcd",
     "url": "/music-connections-quiz/index.html"
   },
   {
-    "revision": "aeb306af81e5cea0c12c",
+    "revision": "1be8a3a6427823be4cd4",
     "url": "/music-connections-quiz/static/css/main.a2b7b0b6.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/music-connections-quiz/static/js/2.fbcb3290.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "aeb306af81e5cea0c12c",
-    "url": "/music-connections-quiz/static/js/main.a3adc7e5.chunk.js"
+    "revision": "1be8a3a6427823be4cd4",
+    "url": "/music-connections-quiz/static/js/main.58f5b3bc.chunk.js"
   },
   {
     "revision": "559969016cbe560def76",
