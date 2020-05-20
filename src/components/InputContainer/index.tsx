@@ -3,12 +3,20 @@ import Input from '../Input';
 import { Container, Answer, Mark } from './styles';
 import { FaCheck, FaTimes } from 'react-icons/fa';
 
-function InputContainer(props) {
-  const [answer, setAnswer] = useState('');
-  const [right, toggleRight] = useState(false);
-  const { which, answers, songNumber, roundNumber, marked, increaseRunningTotal } = props;
+interface Props {
+  which: string,
+  answers: Array<any>,
+  songNumber: number,
+  roundNumber: number,
+  marked: boolean,
+  increaseRunningTotal: (points: number) => void
+}
 
-  function formatAnswer(answer) {
+const InputContainer: React.FC<Props> = ({ which, answers, songNumber, roundNumber, marked, increaseRunningTotal }) => {
+  const [answer, setAnswer] = useState<string>('');
+  const [right, toggleRight] = useState<boolean>(false);
+
+  function formatAnswer(answer: string) {
     return answer
       .trim()
       .toLowerCase()

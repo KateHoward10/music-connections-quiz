@@ -6,13 +6,19 @@ import answers from '../../data/answers.js';
 import { Container, ProgressContainer, RoundIndicator, Progress, ProgressLabel, End, Total } from './styles';
 import { FaUndo, FaCheck, FaTimes, FaChevronRight } from 'react-icons/fa';
 
-function Round(props) {
-  const [guess, setGuess] = useState('');
-  const [runningTotal, setRunningTotal] = useState(0);
-  const [connectionButton, toggleConnectionButton] = useState(true);
-  const [correct, toggleCorrect] = useState(false);
-  const [marked, toggleMarked] = useState(false);
-  const {
+interface Props {
+  roundNumber: number,
+  score: number,
+  bonusPoints: number,
+  increaseScore: (points: number) => void,
+  increaseRoundNumber: () => void,
+  decreaseBonusPoints: () => void,
+  resetBonusPoints: () => void,
+  resetGame: () => void,
+  scrolled: boolean
+}
+
+const Round: React.FC<Props> = ({
     roundNumber,
     score,
     bonusPoints,
@@ -22,16 +28,21 @@ function Round(props) {
     resetBonusPoints,
     resetGame,
     scrolled
-  } = props;
+  }) => {
+  const [guess, setGuess] = useState('');
+  const [runningTotal, setRunningTotal] = useState(0);
+  const [connectionButton, toggleConnectionButton] = useState(true);
+  const [correct, toggleCorrect] = useState(false);
+  const [marked, toggleMarked] = useState(false);
   const songNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  function useConnectionGuess(e) {
+  function useConnectionGuess(e: any) {
     if (connectionButton) {
       setGuess(e.target.value.toLowerCase());
     }
   }
 
-  function useGuessCheck(e) {
+  function useGuessCheck(e: any) {
     e.preventDefault();
     const connection = answers[roundNumber][10][0];
     function connectionGuessCorrect() {
@@ -39,8 +50,8 @@ function Round(props) {
         return (
           guess.indexOf(connection[0]) > -1 && (guess.indexOf(connection[1]) > -1 || guess.indexOf(connection[2]) > -1)
         );
-      } else {
-        return connection.some(option => guess.indexOf(option) > -1);
+      } else if (Array.isArray(connection)) {
+        return connection.some((option: string) => guess.indexOf(option) > -1);
       }
     }
 
@@ -51,7 +62,7 @@ function Round(props) {
     toggleConnectionButton(false);
   }
 
-  function increaseRunningTotal(points) {
+  function increaseRunningTotal(points: number) {
     setRunningTotal(runningTotal + points);
   }
 

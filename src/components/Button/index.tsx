@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { StyledButton } from "./styles";
 
-function Button(props) {
-  const [hovered, toggleHovered] = useState(false);
+function Button(props: any) {
+  const [hovered, toggleHovered] = useState<boolean>(false);
 
   return (
     <StyledButton

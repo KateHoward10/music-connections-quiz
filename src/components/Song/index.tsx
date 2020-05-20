@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Question,
   SongContainer,
@@ -15,27 +15,39 @@ import {
 import InputContainer from '../InputContainer';
 import { FaPlay, FaPause } from 'react-icons/fa';
 
-function Song(props) {
-  const [played, togglePlayed] = useState(false);
-  const [playing, togglePlaying] = useState(false);
-  const [progressLength, setProgressLength] = useState(0);
-  const { roundNumber, songNumber, decreaseBonusPoints, answers, marked, increaseRunningTotal } = props;
+interface Props {
+  roundNumber: number,
+  songNumber: number,
+  decreaseBonusPoints: () => void,
+  answers: Array<any>,
+  marked: boolean,
+  increaseRunningTotal: (points: number) => void
+}
+
+const Song: React.FC<Props> = ({ roundNumber, songNumber, decreaseBonusPoints, answers, marked, increaseRunningTotal }) => {
+  const [played, togglePlayed] = useState<boolean>(false);
+  const [playing, togglePlaying] = useState<boolean>(false);
+  const [progressLength, setProgressLength] = useState<number>(0);
   const song = require(`../../music/${roundNumber}/${songNumber}.mp3`);
-  let _audio = HTMLAudioElement;
+  let audioRef = useRef<HTMLAudioElement>(null);
 
   function play() {
-    _audio.play();
-    togglePlaying(true);
-    if (!played) {
-      togglePlayed(true);
-      decreaseBonusPoints();
+    if (audioRef.current) {
+      audioRef.current.play();
+      togglePlaying(true);
+      if (!played) {
+        togglePlayed(true);
+        decreaseBonusPoints();
+      }
     }
   }
 
   function useProgressLength() {
-    const { duration, currentTime } = _audio;
-    if (duration && currentTime) {
-      setProgressLength((currentTime / duration) * 100);
+    if (audioRef.current) {
+      const { duration, currentTime } = audioRef.current;
+      if (duration && currentTime) {
+        setProgressLength((currentTime / duration) * 100);
+      }
     }
   }
 
@@ -58,7 +70,7 @@ function Song(props) {
                 />
               </CircleContainer>
               {playing ? (
-                <Button onClick={() => _audio.pause()}>
+                <Button onClick={() => audioRef.current && audioRef.current.pause()}>
                   <FaPause />
                 </Button>
               ) : (
@@ -68,7 +80,7 @@ function Song(props) {
               )}
             </ProgressContainer>
             <Audio
-              ref={c => (_audio = c)}
+              ref={audioRef}
               // This stops songs thinking they've already been played (or are still playing) when loading a new round
               onLoadedData={() => {
                 setProgressLength(0);
@@ -95,7 +107,6 @@ function Song(props) {
         </SongContainer>
         <Inputs type={marked ? 'answers' : 'inputs'}>
           <InputContainer
-            placeholder="Song"
             which="0"
             roundNumber={roundNumber}
             songNumber={songNumber}
@@ -104,7 +115,6 @@ function Song(props) {
             marked={marked}
           />
           <InputContainer
-            placeholder="Artist"
             which="1"
             roundNumber={roundNumber}
             songNumber={songNumber}

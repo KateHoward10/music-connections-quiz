@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { StyledInput } from './styles';
 
-function Input({ onChange, onBlur, placeholder, connection }) {
+interface Props {
+  onChange: (arg: any) => void,
+  onBlur?: () => void,
+  placeholder: string,
+  connection?: boolean
+}
+
+const Input: React.FC<Props> = ({ onChange, onBlur, placeholder, connection }) => {
   const [inFocus, toggleFocus] = useState(false);
 
   return (

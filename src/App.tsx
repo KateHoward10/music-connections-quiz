@@ -3,12 +3,12 @@ import Header from './components/Header';
 import RoundContainer from './RoundContainer';
 
 function App() {
-  const [scrolled, setScrolled] = useState(false);
-  const header = useRef(null);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const header = useRef<HTMLDivElement>(null);
 
   function handleScroll() {
     const headerHeight = header.current ? header.current.scrollHeight : null;
-    setScrolled(headerHeight && window.pageYOffset >= headerHeight);
+    setScrolled(!!(headerHeight && window.pageYOffset >= headerHeight));
   }
 
   useEffect(() => {
