@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+type InputsProps = {
+  type: 'answers' | 'inputs';
+}
+
+type ProgressProps = {
+  circumference: number;
+  progressLength: number;
+}
+
 export const Question = styled.div`
   margin-top: 20px;
   display: flex;
@@ -43,17 +52,18 @@ export const SongAnswer = styled.div`
   }
 `;
 
-export const Inputs = styled.div`
+export const Inputs = styled.div<InputsProps>(
+  ({ type }) => `
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  margin-bottom: ${props => (props.type === 'answers' ? '20px' : 0)};
+  margin-bottom: ${type === 'answers' ? '20px' : 0};
   @media screen and (min-width: 500px) {
     flex-direction: row;
-    align-items: ${props => (props.type === 'inputs' ? 'center' : 'flex-start')};
+    align-items: ${type === 'inputs' ? 'center' : 'flex-start'};
   }
-`;
+`);
 
 export const Button = styled.button`
   width: 40px;
@@ -88,10 +98,11 @@ export const CircleContainer = styled.svg`
   transform: rotate(-90deg);
 `;
 
-export const ProgressBar = styled.circle.attrs(({ circumference, progressLength }) => ({
+export const ProgressBar = styled.circle.attrs<ProgressProps>(
+  ({ circumference, progressLength }) => ({
   strokeDasharray: `${circumference} ${circumference}`,
   strokeDashoffset: `${circumference - (progressLength / 100) * circumference}`
-}))`
+}))<ProgressProps>`
   stroke-width: 5px;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.35s;

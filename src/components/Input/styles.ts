@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-export const StyledInput = styled.input(
+type InputProps = {
+  connection: boolean;
+  inFocus: boolean;
+}
+
+export const StyledInput = styled.input<InputProps>(
   ({ connection, inFocus }) => `
   appearance: none;
   -webkit-appearance: none;

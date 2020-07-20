@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 
-export const StyledForm = styled.form(
+type FormProps = {
+  scrolled: boolean;
+}
+
+export const StyledForm = styled.form<FormProps>(
   ({ scrolled }) => `
   padding: 10px;
   z-index: 200;
@@ -13,8 +17,7 @@ export const StyledForm = styled.form(
       box-shadow: 0 0 5px lightgrey;
       width: 100vw;
     `}
-`
-);
+`);
 
 export const Container = styled.div`
   display: flex;

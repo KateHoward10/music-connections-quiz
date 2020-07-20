@@ -22,7 +22,7 @@ const Input: React.FC<Props> = ({ onChange, onBlur, placeholder, connection }) =
       }}
       inFocus={inFocus}
       placeholder={placeholder}
-      connection={connection}
+      connection={!!connection}
     />
   );
 }

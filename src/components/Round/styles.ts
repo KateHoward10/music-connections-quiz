@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+type IndicatorProps = {
+  active: boolean;
+}
+
+type ProgressProps = {
+  progressLength: number;
+}
+
 export const Container = styled.div`
   max-width: 720px;
   padding: 3vw;
@@ -16,21 +24,23 @@ export const ProgressContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const RoundIndicator = styled.div`
+export const RoundIndicator = styled.div<IndicatorProps>(
+  ({ active }) => `
   width: 12px;
   height: 12px;
   border-radius: 6px;
-  background-color: ${props => (props.active ? '#279add' : 'lightgrey')};
-`;
+  background-color: ${active ? '#279add' : 'lightgrey'};
+`);
 
-export const Progress = styled.div`
+export const Progress = styled.div<ProgressProps>(
+  ({ progressLength }) => `
   background-color: #279add;
-  width: ${props => props.progressLength}%;
+  width: ${progressLength}%;
   height: 4px;
   border-radius: 2px;
   margin-top: -4px;
   z-index: 10;
-`;
+`);
 
 export const ProgressLabel = styled.p`
   font-size: 12px;

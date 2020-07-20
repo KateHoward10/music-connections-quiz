@@ -1,6 +1,12 @@
 import styled, { css } from 'styled-components';
 
-export const StyledButton = styled.button`
+type ButtonProps = {
+  hovered: boolean;
+  variant: 'interrobang' | 'right' | 'reset';
+}
+
+export const StyledButton = styled.button<ButtonProps>(
+  ({ hovered, variant }) =>`
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -12,31 +18,26 @@ export const StyledButton = styled.button`
   padding: 5px;
   margin: 5px 0;
   border-radius: 5px;
-  border: 1px solid ${props => (props.hovered ? 'grey' : 'transparent')};
+  border: 1px solid ${hovered ? 'grey' : 'transparent'};
   background-color: #5dd0ea;
   svg,
   span {
     margin: 0 2px;
   }
-  ${props =>
-    props.type === 'interrobang' &&
+  ${variant === 'interrobang' ?
     css`
       width: 50px;
       height: 50px;
       float: right;
       font-size: 30px;
       border-radius: 50%;
-    `};
-  ${props =>
-    props.type === 'right' &&
+    ` : variant === 'right' ?
     css`
       float: right;
       margin: 20px 0;
-    `};
-  ${props =>
-    props.type === 'reset' &&
+    ` : variant === 'reset' &&
     css`
       background-color: #324bd9;
       color: #fff;
     `};
-`;
+`);

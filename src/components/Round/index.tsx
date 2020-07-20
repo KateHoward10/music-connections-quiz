@@ -105,7 +105,7 @@ const Round: React.FC<Props> = ({
       <Total>
         {marked && <p>Score so far: {score} / 480</p>}
         <Button
-          type="reset"
+          variant="reset"
           onClick={() => {
             reset();
             window.location.reload();
@@ -152,12 +152,12 @@ const Round: React.FC<Props> = ({
             />
           ))}
           {marked ? (
-            <Button type="right" onClick={continueGame}>
+            <Button variant="right" onClick={continueGame}>
               <span>Continue</span>
               <FaChevronRight />
             </Button>
           ) : (
-            <Button type="right" onClick={mark}>
+            <Button variant="right" onClick={mark}>
               Mark Answers
             </Button>
           )}

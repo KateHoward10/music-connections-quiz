@@ -4,8 +4,8 @@ import Button from '../Button';
 import { StyledForm, Container } from './styles';
 
 interface Props {
-  onSubmit: (e: any) => void,
-  onChange: (e: any) => void,
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void,
+  onChange: (e: React.KeyboardEvent<HTMLInputElement>) => void,
   buttonVisible: boolean,
   bonusPoints: number,
   scrolled: boolean
@@ -17,7 +17,7 @@ const ConnectionForm: React.FC<Props> = ({ onSubmit, onChange, buttonVisible, bo
       <Container>
         <Input connection onChange={onChange} placeholder="Connection" />
         {buttonVisible ? (
-          <Button type="submit">Submit for a possible {bonusPoints} points</Button>
+          <Button variant="submit">Submit for a possible {bonusPoints} points</Button>
         ) : (
           <span>Thanks for guessing!</span>
         )}
