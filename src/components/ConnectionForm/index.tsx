@@ -5,7 +5,7 @@ import { StyledForm, Container } from './styles';
 
 interface Props {
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void,
-  onChange: (e: React.KeyboardEvent<HTMLInputElement>) => void,
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
   buttonVisible: boolean,
   bonusPoints: number,
   scrolled: boolean

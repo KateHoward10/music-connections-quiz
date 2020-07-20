@@ -1,10 +1,12 @@
+import { State, ActionType } from './types';
+
 const initialState = {
   roundNumber: 0,
   score: 0,
   bonusPoints: 11
 };
 
-const reducer = (state, action) => {
+const reducer = (state: State = initialState, action: ActionType) => {
   switch (action.type) {
     case "increaseRoundNumber":
       return {

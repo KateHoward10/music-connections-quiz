@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ConnectionForm from '../ConnectionForm';
 import Song from '../Song';
 import Button from '../Button';
-import answers from '../../data/answers.js';
+import answers from '../../data/answers';
 import { Container, ProgressContainer, RoundIndicator, Progress, ProgressLabel, End, Total } from './styles';
 import { FaUndo, FaCheck, FaTimes, FaChevronRight } from 'react-icons/fa';
 
@@ -36,13 +36,13 @@ const Round: React.FC<Props> = ({
   const [marked, toggleMarked] = useState(false);
   const songNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  function useConnectionGuess(e: any) {
+  function useConnectionGuess(e: React.ChangeEvent<HTMLInputElement>) {
     if (connectionButton) {
       setGuess(e.target.value.toLowerCase());
     }
   }
 
-  function useGuessCheck(e: any) {
+  function useGuessCheck(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const connection = answers[roundNumber][10][0];
     function connectionGuessCorrect() {
