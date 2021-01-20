@@ -3,7 +3,7 @@ import ConnectionForm from '../ConnectionForm';
 import Song from '../Song';
 import Button from '../Button';
 import answers from '../../data/answers';
-import { Container, ProgressContainer, RoundIndicator, Progress, ProgressLabel, End, Total } from './styles';
+import { Container, ProgressContainer, RoundIndicator, Progress, ProgressLabel, End, Total, Score } from './styles';
 import { FaUndo, FaCheck, FaTimes, FaChevronRight } from 'react-icons/fa';
 
 interface Props {
@@ -103,7 +103,7 @@ const Round: React.FC<Props> = ({
       <Progress progressLength={(roundNumber / 15) * 100} />
       <ProgressLabel>{roundNumber}/16 rounds completed</ProgressLabel>
       <Total>
-        {marked && <p>Score so far: {score} / 480</p>}
+        {marked && <Score>Score so far: {score} / 480</Score>}
         <Button
           variant="reset"
           onClick={() => {

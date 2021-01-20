@@ -61,3 +61,7 @@ export const Total = styled.div`
   justify-content: flex-end;
   flex-wrap: wrap;
 `;
+
+export const Score = styled.span`
+  margin: 5px;
+`;
