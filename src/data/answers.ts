@@ -188,7 +188,7 @@ const answers = [
         ['Waterfalls', 'TLC'],
         ['Enola Gay', ['Orchestral Manoeuvres in the Dark', 'OMD']],
         ['Proud Mary', ['Creedence Clearwater Revival', 'CCR']],
-        ['Remember Me', ['British Sea Power', 'BSP']],
+        ['Making Plans For Nigel', 'XTC'],
         ['Express Yourself', 'N.W.A'],
         ['Spitfire', ['Public Service Broadcasting', 'PSB']],
         ['When Smokey Sings', 'ABC'],
