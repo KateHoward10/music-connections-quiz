@@ -28,7 +28,7 @@ const Song: React.FC<Props> = ({ roundNumber, songNumber, decreaseBonusPoints, a
   const [played, togglePlayed] = useState<boolean>(false);
   const [playing, togglePlaying] = useState<boolean>(false);
   const [progressLength, setProgressLength] = useState<number>(0);
-  const song = require(`../../music/${roundNumber}/${songNumber}.mp3`);
+  const song = require(`../../music/${roundNumber}/${songNumber}.mp3`).default;
   let audioRef = useRef<HTMLAudioElement>(null);
 
   function play() {
