@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Question,
   SongContainer,
@@ -21,24 +21,32 @@ interface Props {
   decreaseBonusPoints: () => void,
   answers: Array<any>,
   marked: boolean,
-  increaseRunningTotal: (points: number) => void
+  increaseRunningTotal: (points: number) => void,
+  songPlaying: number | null,
+  setSongPlaying: (songPlaying: number | null) => void
 }
 
-const Song: React.FC<Props> = ({ roundNumber, songNumber, decreaseBonusPoints, answers, marked, increaseRunningTotal }) => {
+const Song: React.FC<Props> = ({
+  roundNumber,
+  songNumber,
+  decreaseBonusPoints,
+  answers,
+  marked,
+  increaseRunningTotal,
+  songPlaying,
+  setSongPlaying
+}) => {
   const [played, togglePlayed] = useState<boolean>(false);
-  const [playing, togglePlaying] = useState<boolean>(false);
+  const [isPlaying, togglePlaying] = useState<boolean>(false);
   const [progressLength, setProgressLength] = useState<number>(0);
   const song = require(`../../music/${roundNumber}/${songNumber}.mp3`).default;
   let audioRef = useRef<HTMLAudioElement>(null);
 
   function play() {
-    if (audioRef.current) {
-      audioRef.current.play();
-      togglePlaying(true);
-      if (!played) {
-        togglePlayed(true);
-        decreaseBonusPoints();
-      }
+    setSongPlaying(songNumber);
+    if (!played) {
+      togglePlayed(true);
+      decreaseBonusPoints();
     }
   }
 
@@ -50,6 +58,18 @@ const Song: React.FC<Props> = ({ roundNumber, songNumber, decreaseBonusPoints, a
       }
     }
   }
+
+  useEffect(() => {
+    if (audioRef.current) {
+      if (songNumber === songPlaying) {
+        audioRef.current.play();
+        togglePlaying(true);
+      } else {
+        audioRef.current.pause();
+        togglePlaying(false);
+      }
+    }
+  }, [audioRef, songNumber, songPlaying])
 
   return (
     <React.Fragment>
@@ -69,7 +89,7 @@ const Song: React.FC<Props> = ({ roundNumber, songNumber, decreaseBonusPoints, a
                   circumference={48 * Math.PI}
                 />
               </CircleContainer>
-              {playing ? (
+              {isPlaying ? (
                 <Button onClick={() => audioRef.current && audioRef.current.pause()}>
                   <FaPause />
                 </Button>
@@ -88,7 +108,10 @@ const Song: React.FC<Props> = ({ roundNumber, songNumber, decreaseBonusPoints, a
                 togglePlaying(false);
               }}
               onPause={() => togglePlaying(false)}
-              onEnded={() => togglePlaying(false)}
+              onEnded={() => {
+                togglePlaying(false);
+                setSongPlaying(null);
+              }}
               onTimeUpdate={useProgressLength}
               src={song}
             />

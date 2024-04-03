@@ -34,6 +34,7 @@ const Round: React.FC<Props> = ({
   const [connectionButton, toggleConnectionButton] = useState(true);
   const [correct, toggleCorrect] = useState(false);
   const [marked, toggleMarked] = useState(false);
+  const [songPlaying, setSongPlaying] = useState<number | null>(null);
   const songNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   function useConnectionGuess(e: React.ChangeEvent<HTMLInputElement>) {
@@ -149,6 +150,8 @@ const Round: React.FC<Props> = ({
               answers={answers}
               marked={marked}
               increaseRunningTotal={increaseRunningTotal}
+              songPlaying={songPlaying}
+              setSongPlaying={setSongPlaying}
             />
           ))}
           {marked ? (
